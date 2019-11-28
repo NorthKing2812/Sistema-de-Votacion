@@ -96,15 +96,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/eleccionesDipu')?>" class="nav-link">
+                <a href="<?=base_url('index.php/Welcome/eleccionesSena')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Diputados</p>
+                  <p>Senadores</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?=base_url('index.php/Welcome/eleccionesDipu')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Senadores</p>
+                  <p>Diputados</p>
                 </a>
               </li>
             </ul>
@@ -146,6 +146,14 @@
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
               Colegio Electoral
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=base_url('index.php/Welcome/colegiosTabla')?>" class="nav-link">
+              <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>
+              Historias de Elecciones
               </p>
             </a>
           </li>

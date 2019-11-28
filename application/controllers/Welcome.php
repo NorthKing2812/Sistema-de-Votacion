@@ -34,12 +34,24 @@ class Welcome extends CI_Controller {
 		$this->load->view('Entidades/Candidatos');
 		$this->load->view('plantillas/footer');		
 	}
-	
+	public function registrarCandidato(){
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Entidades/Registrar_Candidato');
+		$this->load->view('plantillas/footer');		
+	}
 	public function partidos(){
 		$this->load->view('plantillas/encabezado');
 		$this->load->view('plantillas/left');
 		$this->load->view('Entidades/partidos');
 		$this->load->view('plantillas/footer');		
+	}
+	public function registrarPartidos(){
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Entidades/Registrar_Partido');
+		$this->load->view('plantillas/footer');		
+		
 	}
 	//Votaciones Presidenciales
 	public function listadoPresidente(){
@@ -51,10 +63,10 @@ class Welcome extends CI_Controller {
 	public function resultadoPre(){
 		$this->load->view('plantillas/encabezado');
 		$this->load->view('plantillas/left');
-		$this->load->view('Votaciones/resultado');
+		$this->load->view('Votaciones Presidenciales/resultado');
 		$this->load->view('plantillas/footer');
 	}
-	public function eleccionesViPre(){
+	public function eleccionesSena(){
 		$this->load->view('plantillas/encabezado');
 		$this->load->view('plantillas/left');
 		$this->load->view('Votaciones Presidenciales/Senadores');
@@ -64,7 +76,7 @@ class Welcome extends CI_Controller {
 	public function eleccionesDipu(){
 		$this->load->view('plantillas/encabezado');
 		$this->load->view('plantillas/left');
-		$this->load->view('Votaciones Presidenciales/Diputado');
+		$this->load->view('Votaciones Presidenciales/Diputados');
 		$this->load->view('plantillas/footer');
 	}
 	

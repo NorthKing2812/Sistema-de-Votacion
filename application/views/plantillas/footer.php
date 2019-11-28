@@ -11,6 +11,17 @@
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>dist/js/adminlte.min.js"></script>
+<!-- Select2 -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/moment/moment.min.js"></script>
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
 <!-- FLOT CHARTS -->
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/flot/jquery.flot.js"></script>
 <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
@@ -57,6 +68,17 @@ if($('#bar-chart').length>0){
       }
     })
     /* END BAR CHART */
+
+        //Colorpicker
+        $('.my-colorpicker1').colorpicker()
+    //color picker with addon
+    $('.my-colorpicker2').colorpicker()
+
+    $('.my-colorpicker2').on('colorpickerChange', function(event) {
+      $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+    });
+
+
 }
 $("#example1").DataTable();
 

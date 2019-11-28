@@ -52,6 +52,11 @@
                   <td><span class="badge badge-success">Terminado.</span></td>
                   <td>
                       <a href="<?=base_url('index.php/Welcome/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
+                     <button type="button" class="btn btn-default bg-orange " style="color:#fff;" data-toggle="modal" data-target="#modal-xl">
+                  Agregar mesa
+                </button>
+
+
                         <a href="" class="btn btn-success"><span class="fas fa-table"></span></a>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
                   </td>
@@ -108,3 +113,26 @@
     </section>
     <!-- /.content -->
 </div>
+
+<div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Extra Large Modal</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->

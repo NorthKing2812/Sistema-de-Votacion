@@ -4,14 +4,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Votaciones Senador</h1>
+            <h1>Candidatos a Senador</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Votos</li>
-              <li class="breadcrumb-item active">Elecciones Presidenciales</li>
-              <li class="breadcrumb-item active">Votaciones Senador</li>
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              <li class="breadcrumb-item active">Elecciones Congresuales</li>
+              <li class="breadcrumb-item active">Candidatos a Senador</li>
             </ol>
           </div>
         </div>
@@ -24,7 +23,7 @@
           <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Tabla de Senadores</h3>
+              <h3 class="card-title">Candidatos a Senador</h3>
             
               <div class="card-tools">
             <a href="" class="btn btn-sm btn-primary"><span class="fas fa-plus"></span></a>
@@ -36,11 +35,10 @@
                 <thead>
                 <tr>
                  <th>ID Candidato</th>
-                 <th>Candidato</th>
+                 <th>Nombre y Apellido</th>
                  <th>Partido</th>
                  <th>Provincia</th>
-                 <th>Cantidad de votos</th>
-                 <th>Grafica</th>
+                 <th>Foto</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -50,43 +48,16 @@
                   <td>Margarita Cedeño</td>
                   <td><a href="">PLD</a></td>
                   <td>Santiago</td>
-
-                  <td>250,000</td>
-                  <td><div class="progress progress-sm active">
-  <div class="progress-bar bg-success" role="progressbar"
-       aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div></td>
-                </tr>
-                
-                <tr>
-                  <td>2</td>
-                  <td>Luis Abinader</td>
-                  <td>Santiago</td>
-
-                  <td><a href="">PRM</a></td>
-                  <td>275,000</td>
-                  <td><div class="progress progress-sm active">
-  <div class="progress-bar bg-success" role="progressbar"
-       aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 37%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div></td>
+                  <td>
+                    <div class="progress progress-sm active">
+                      <div class="progress-bar bg-success" role="progressbar"
+                          aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                        <span class="sr-only">20% Complete</span>
+                      </div>
+                    </div>
+                   </td>
                 </tr>
                 </tbody>
-                <tfoot>
-                <tr>
-                <tr>
-                 <th>ID Candidato</th>
-                 <th>Candidato</th>
-                 <th>Partido</th>
-                 <th>Provincia</th>
-                 <th>Cantidad de votos</th>
-                 <th>Grafica</th>
-                </tr>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.card-body -->
