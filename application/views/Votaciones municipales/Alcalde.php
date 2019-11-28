@@ -4,14 +4,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Votaciones Alcalde</h1>
+            <h1>Candidatos a Alcalde</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Votos</li>
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
               <li class="breadcrumb-item active">Elecciones Municipales</li> 
-              <li class="breadcrumb-item active">Votaciones Alcaldes</li>
+              <li class="breadcrumb-item active">Candidatos a Alcalde</li>
             </ol>
           </div>
         </div>
@@ -24,7 +23,7 @@
           <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Tabla de Alcaldes</h3>
+              <h3 class="card-title">Candidatos a Alcalde</h3>
             
               <div class="card-tools">
             <a href="" class="btn btn-sm btn-primary"><span class="fas fa-plus"></span></a>
@@ -39,8 +38,8 @@
                  <th>Candidato</th>
                  <th>Partido</th>
                  <th>Municipo</th>
-                 <th>Cantidad de votos</th>
-                 <th>Grafica</th>
+                 <th>Provincia</th>
+                 <th>Foto</th>
                 </tr>
                 </thead>
                 <tbody>
