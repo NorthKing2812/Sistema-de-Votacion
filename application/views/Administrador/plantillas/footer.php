@@ -35,6 +35,9 @@ if($('#bar-chart').length>0){
      * BAR CHART
      * ---------
      */
+ 
+/* */ 
+
 
     var bar_data = {
       data : [[1,10], [2,8], [3,4], [4,13], [5,17]],
