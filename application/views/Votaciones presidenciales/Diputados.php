@@ -49,7 +49,7 @@
                   <td>Margarita Cedeño</td>
                   <td><a href="">PLD</a></td>
                  <td>Santiago</td>
-                  <td>35,000</td>
+                  <td>35,4553</td>
                   <td>
                     <div class="progress progress-sm active">
                       <div class="progress-bar bg-success" role="progressbar"
