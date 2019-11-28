@@ -48,13 +48,7 @@
                   <td>1</td>
                   <td>Leonel Fernandez Reina </td>
                   <td><a href="">PLD</a></td>
-                  <td>250,000</td>
-                  <td><div class="progress progress-sm active">
-  <div class="progress-bar bg-success" role="progressbar"
-       aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div></td>
+                  <td></td>
                 </tr>
                 
                 <tr>
@@ -62,12 +56,7 @@
                   <td>Luis Abinader</td>
                   <td><a href="">PRM</a></td>
                   <td>275,000</td>
-                  <td><div class="progress progress-sm active">
-  <div class="progress-bar bg-success" role="progressbar"
-       aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 37%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div></td>
+                  <td></td>
                 </tr>
                 </tbody>
                 <tfoot>

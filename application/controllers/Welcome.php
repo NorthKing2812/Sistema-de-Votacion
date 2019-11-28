@@ -42,10 +42,16 @@ class Welcome extends CI_Controller {
 		$this->load->view('Administrador/plantillas/footer');		
 	}
 	//Votaciones Presidenciales
-	public function eleccionesPre(){
+	public function listadoPresidente(){
 		$this->load->view('Administrador/plantillas/encabezado');
 		$this->load->view('Administrador/plantillas/left');
 		$this->load->view('Administrador/Votaciones/Presidenciales');
+		$this->load->view('Administrador/plantillas/footer');
+	}
+	public function resultadoPre(){
+		$this->load->view('Administrador/plantillas/encabezado');
+		$this->load->view('Administrador/plantillas/left');
+		$this->load->view('Administrador/Votaciones/Resultado_presidente');
 		$this->load->view('Administrador/plantillas/footer');
 	}
 	public function eleccionesViPre(){
@@ -93,7 +99,7 @@ class Welcome extends CI_Controller {
 	public function mesasVotantes(){
 		$this->load->view('Administrador/plantillas/encabezado');
 		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Colegios/Votantes');
+		$this->load->view('Administrador/.Colegios/Votantes');
 		$this->load->view('Administrador/plantillas/footer');
 	}
 }
