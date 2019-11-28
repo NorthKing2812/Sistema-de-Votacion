@@ -42,10 +42,16 @@ class Welcome extends CI_Controller {
 		$this->load->view('plantillas/footer');		
 	}
 	//Votaciones Presidenciales
-	public function eleccionesPre(){
+	public function listadoPresidente(){
 		$this->load->view('plantillas/encabezado');
 		$this->load->view('plantillas/left');
-		$this->load->view('Votaciones/Presidenciales');
+		$this->load->view('Votaciones Presidenciales/Presidenciales');
+		$this->load->view('plantillas/footer');
+	}
+	public function resultadoPre(){
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Votaciones/resultado');
 		$this->load->view('plantillas/footer');
 	}
 	public function eleccionesViPre(){

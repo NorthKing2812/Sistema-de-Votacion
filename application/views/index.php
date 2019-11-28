@@ -36,7 +36,7 @@ width:800px;
                     <a class="nav-link active" id="tab_Presidencial" data-toggle="pill" href="#bar-chart" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Presidenciales</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Vice Presidencia</a>
+                    <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Congresuales</a>
                   </li>
                 </ul>
 
@@ -68,9 +68,6 @@ width:800px;
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
                   </button>
                 </div>
               </div>

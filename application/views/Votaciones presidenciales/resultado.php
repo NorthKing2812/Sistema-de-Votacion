@@ -21,10 +21,39 @@
   <!-- Main content -->
   <section class="content">
       <div class="row">
-      <div class="col-md*12">
-      
-      
-      </div>
+          <div class="col-md-12">
+              
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+       <div class="row">
+       <div class="col-md-12">
+            <!-- Bar chart -->
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="tab_Presidencial" data-toggle="pill" href="#bar-chart" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Presidenciales</a>
+                  </li>
+                  
+                </ul>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                 
+                </div>
+              </div>
+              <div class="card-body">
+                <div id="bar-chart" style="height: 300px;"></div>
+              </div>
+              <!-- /.card-body-->
+            </div>
+            <!-- /.card -->
+       </div>
+<!--Row-->
+          </div>
       </div>
       <div class="row">
           <div class="col-md-12">
