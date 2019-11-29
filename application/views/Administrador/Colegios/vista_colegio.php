@@ -17,15 +17,15 @@
                                 </div>
                                       
 </div>
-<div class="row">
-    <div class="form-group ">
-        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
-        <button type="reset" class="btn btn-warning btn-lg">Limpiar</button>
+<div class="row ">
+    <div class="form-group col-4">
+        <button type="submit" class="btn btn-primary btn">Guardar</button>
+        <button type="reset" class="btn btn-warning btn">Limpiar</button>
     </div>
 </div>
                     </form>
                     <!--/.Form-->
-
+                    <h4 class="my-2">Listado de tablas</h4>
                     <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>

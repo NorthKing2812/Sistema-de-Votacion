@@ -43,16 +43,21 @@ class Welcome extends CI_Controller {
 		$this->load->view('Administrador/plantillas/footer');		
 	}
 	public function registrarCandidato(){
+		$this->load->model('candidato_model','',true);
 		
-		$datos = array(
+		$datosSession = array(
 			'_token' => null
 		);
-		
+		//
+		$datos= array(
+			'Puestos'=>$this->candidato_model->obtenerPuestos()
+
+		);
 		$this->session->set_userdata($datos);
 		
 		$this->load->view('Administrador/plantillas/encabezado');
 		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Entidades/Registrar_Candidato');
+		$this->load->view('Administrador/Entidades/Registrar_Candidato',$datos);
 		$this->load->view('Administrador/plantillas/footer');		
 	}
 	public function partidos(){
@@ -116,10 +121,15 @@ class Welcome extends CI_Controller {
 		$this->load->view('Administrador/plantillas/footer');
 	}
 	
-	public function colegioMesa(){
+	public function registrarColegio(){
+		$this->load->model('Colegio_model','',true);
+			
+		$datos=array(
+				'Sectores'=>$this->Colegio_model->getSectores(),
+			);
 		$this->load->view('Administrador/plantillas/encabezado');
 		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Colegios/Mesas');
+		$this->load->view('Administrador/Colegios/RegistrarColegio',$datos);
 		$this->load->view('Administrador/plantillas/footer');
 	}
 	public function vistaColegio(){
@@ -128,6 +138,14 @@ class Welcome extends CI_Controller {
         $this->load->view('Administrador/Colegios/vista_colegio',$colegio);
         
     }
+	
+	//mesas y votantes
+	public function colegioMesa(){
+		$this->load->view('Administrador/plantillas/encabezado');
+		$this->load->view('Administrador/plantillas/left');
+		$this->load->view('Administrador/Colegios/Mesas');
+		$this->load->view('Administrador/plantillas/footer');
+	}
 	public function mesasVotantes(){
 		$this->load->view('Administrador/plantillas/encabezado');
 		$this->load->view('Administrador/plantillas/left');

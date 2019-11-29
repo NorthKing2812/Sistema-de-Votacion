@@ -71,9 +71,18 @@ if($('#bar-chart').length>0){
       }
     })
     /* END BAR CHART */
+}
+$("#example1").DataTable(
+  
+);
+
 
         //Colorpicker
         $('.my-colorpicker1').colorpicker()
+   
+        $('.my-colorpicker1').on('colorpickerChange', function(event) {
+      $('.my-colorpicker1 .fa-square').css('color', event.color.toString());
+    });
     //color picker with addon
     $('.my-colorpicker2').colorpicker()
 
@@ -82,23 +91,39 @@ if($('#bar-chart').length>0){
     });
 
 
-$(document).on("click",".btn-view-formcolegio",function(){
+$('.btn-view-formcolegio').on("click",function(){
 let id_colegio=0;
 $.ajax({
-url:base_url+ "index.php/Welcome/vistaColegio/"+id_colegio,
-type:"GET",
-datatype:"html",
-success:function(resp){
-$("#modal-colegio .modal-body").html(resp);
-}
-});
+  url:base_url+ "index.php/Welcome/vistaColegio",
+  type:"POST",
+  datatype:"html",
+  data:{id:id_colegio},
+  success:function(data){
+    $("#modal-colegio .modal-body").html(data);
+  }
+  });
+//
 });
 
-}
-$("#example1").DataTable(
-  
-);
+//Puestos cambios
+$("#puestos").val().change(function(){
 
+let puestos = $(this).val();
+alert(puestos);
+if(puestos ==2 || puestos==3){
+$('#provincia').prop('disabled', false);
+}else{
+  $('#provincia').prop('disabled', true);
+}
+if(puestos==4||puestos==5){
+  $('#municipio').prop('disabled', false);
+
+}else{
+  $('#municipio').prop('disabled', true);
+
+}
+
+});
 
 var map = L.map('map').setView([18.65657, -72.374343], 06);
 

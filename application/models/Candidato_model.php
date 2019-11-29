@@ -12,7 +12,11 @@ class Candidato_model extends CI_Model {
             return false;
         }
     }
-
+    public function obtenerPuestos(){
+        $this->db->from('puesto');
+        $resultado= $this->db->get();
+        return $resultado->result();
+    }
 }
 
 /* End of file Candidato_model.php */

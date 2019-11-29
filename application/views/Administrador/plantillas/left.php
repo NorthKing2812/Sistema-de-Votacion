@@ -33,7 +33,8 @@
               </p>
             </a>
           </li>
-               <li class="nav-item has-treeview menu-close">
+          
+          <li class="nav-item has-treeview menu-close">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-landmark"></i>
               <p>
@@ -43,20 +44,84 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                
+          <li class="px-2 nav-item has-treeview menu-close">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-dot-circle"></i>
+              <p>
+              Candidato
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav  px-1 nav-treeview">
+              <li class=" nav-item">
+                <a href="<?=base_url('index.php/Welcome/registrarCandidato')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?=base_url('index.php/Welcome/candidatos')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Candidatos</p>
+                  <p>Ver lista</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+    
+              </li>
+              <li class="nav-item">
+              <li class="px-2 nav-item has-treeview menu-close">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-dot-circle"></i>
+              <p>
+              Partido
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav px-1 nav-treeview">
+              <li class="nav-item">
+                <a href="<?=base_url('index.php/Welcome/registrarPartidos')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?=base_url('index.php/Welcome/partidos')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Partidos</p>
+                  <p>Ver lista</p>
                 </a>
               </li>
             </ul>
           </li>
-          
+    
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>
+              Colegio Electoral
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=base_url('index.php/Welcome/registrarColegio')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('index.php/Welcome/colegiosTabla')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver lista</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
           <li class="nav-item has-treeview menu-close">
             <a href="#" class="nav-link">
@@ -142,16 +207,8 @@
           </li>
           
           <li class="nav-item">
-            <a href="<?=base_url('index.php/Welcome/colegiosTabla')?>" class="nav-link">
-              <i class="nav-icon fas fa-graduation-cap"></i>
-              <p>
-              Colegio Electoral
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?=base_url('index.php/Welcome/colegiosTabla')?>" class="nav-link">
-              <i class="nav-icon fas fa-graduation-cap"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-history"></i>
               <p>
               Historias de Elecciones
               </p>

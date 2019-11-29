@@ -67,11 +67,10 @@
                             
                             <div class="form-group col-md-3 mr-4">
                                 <label for="">Puesto:</label>
-                                <select class="form-control select2" name="puestos" style="width: 100%;">
-                                  <option>Presidente</option>
-                                  <option>Diputado</option>
-                                  <option>Senador</option>
-                                  <option>Alcalde</option>
+                                <select class="form-control select2" id="puestos" name="puestos" style="width: 100%;">
+                                 <?php foreach ($Puestos as $puesto):?>
+                                    <option value="<?=$puesto->id_puesto?>"><?=$puesto->descripcion?></option>
+                                 <?php endforeach;?>
                                 </select>
                               </div>
                         </div> <!--/. Rows-->
@@ -79,7 +78,7 @@
                                 
                             <div class="form-group col-md-4">
                                     <label for="">Provincias</label>
-                                    <select class="form-control select2" name='provincia' disabled="disabled" style="width: 100%;">
+                                    <select class="form-control select2" id="provincia" name='provincia' disabled="disabled" style="width: 100%;">
                                         <option>Santiago</option>
                                         <option>Santo Domingo</option>
                                         <option>Azua</option>
