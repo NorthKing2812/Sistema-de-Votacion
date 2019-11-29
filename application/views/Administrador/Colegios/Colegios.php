@@ -19,7 +19,7 @@
   <!-- Main content -->
   <section class="content">
       <div class="row">
-          <div class="col-md-12">
+          <div class="col-12">
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Tabla de colegios</h3>
@@ -52,7 +52,7 @@
                   <td><span class="badge badge-success">Terminado.</span></td>
                   <td>
                       <a href="<?=base_url('index.php/Welcome/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
-                     <button type="button" class="btn btn-default bg-orange " style="color:#fff;" data-toggle="modal" data-target="#modal-xl">
+                     <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
                   Agregar mesa
                 </button>
 
@@ -71,6 +71,9 @@
                   <td><span class="badge badge-warning">Incompleto.</span></td>
                   <td>
                   <a href="<?=base_url('index.php/Welcome/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
+                  <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
+                  Agregar mesa
+                </button>
                         <a href="" class="btn btn-success"><span class="fas fa-table"></span></a>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
                   </td>
@@ -85,6 +88,9 @@
                   <td><span class="badge badge-danger">Inactivo.</span></td>
                   <td>
                   <a href="<?=base_url('index.php/Welcome/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
+                  <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
+                  Agregar mesa
+                </button>
                         <a href="" class="btn btn-success"><span class="fas fa-table"></span></a>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
                   </td>
@@ -114,17 +120,17 @@
     <!-- /.content -->
 </div>
 
-<div class="modal fade" id="modal-xl">
+<div class="modal fade" id="modal-colegio">
         <div class="modal-dialog modal-xl">
-          <div class="modal-content">
+        <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Extra Large Modal</h4>
+              <h4 class="modal-title">Registrar Mesa</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
+                
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -32,21 +32,23 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                    <form>
+                    
+            <form action="<?=base_url('index.php/administracion/registrarCandidato')?>" method="post" enctype="multipart/form-data" >
+                    <input type="hidden" name="_token" value="<?=$this->nocsrf->generate($this->session->userdata('_token'))?>" >
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="">Foto</label>
-                                <input type="file" name="imageCand" class="form-control">
+                                <input type="file" name="imageCand" class="form-control" accept="image/*">
                                 </div>
 
                             <div class="form-group col-md-4">
                                     <label for="">Nombre</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="nombre" class="form-control">
                                     </div>
                                         
                                 <div class="form-group col-md-4">
                                     <label for="">Apellido</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="apellido" class="form-control">
                                     </div>
                     
 </div>
@@ -55,7 +57,7 @@
 
                             <div class="form-group col-md-3 mr-4">
                               <label for="">Partido:</label>
-                              <select class="form-control select2" style="width: 100%;">
+                              <select class="form-control select2" name="partido" style="width: 100%;">
                                 <option selected="selected">Alabama</option>
                                 <option>Partido Liberal Dominicano</option>
                                 <option>Partido Reformista Social Cristiano</option>
@@ -65,7 +67,7 @@
                             
                             <div class="form-group col-md-3 mr-4">
                                 <label for="">Puesto:</label>
-                                <select class="form-control select2" style="width: 100%;">
+                                <select class="form-control select2" name="puestos" style="width: 100%;">
                                   <option>Presidente</option>
                                   <option>Diputado</option>
                                   <option>Senador</option>
@@ -77,8 +79,8 @@
                                 
                             <div class="form-group col-md-4">
                                     <label for="">Provincias</label>
-                                    <select class="form-control select2" disabled="disabled" style="width: 100%;">
-                                        <option selected="selected">Santiago</option>
+                                    <select class="form-control select2" name='provincia' disabled="disabled" style="width: 100%;">
+                                        <option>Santiago</option>
                                         <option>Santo Domingo</option>
                                         <option>Azua</option>
                                         <option>Samana</option>
@@ -87,7 +89,7 @@
                                         
                                 <div class="form-group col-md-4">
                                     <label for="">Municipio</label>
-                                    <select class="form-control select2" disabled="disabled" style="width: 100%;">
+                                    <select class="form-control select2" name='Municipio' disabled="disabled" style="width: 100%;">
                                         <option selected="selected">Santo Domingo Norte</option>
                                         <option>Santo Domingo Este</option>
                                         <option>Bani</option>

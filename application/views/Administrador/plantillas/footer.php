@@ -41,6 +41,9 @@
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>dist/js/pages/dashboard2.js"></script>
 <script>
 $(function(){
+
+let base_url="<?=base_url()?>";
+
 if($('#bar-chart').length>0){
         /*
      * BAR CHART
@@ -79,8 +82,22 @@ if($('#bar-chart').length>0){
     });
 
 
+$(document).on("click",".btn-view-formcolegio",function(){
+let id_colegio=0;
+$.ajax({
+url:base_url+ "index.php/Welcome/vistaColegio/"+id_colegio,
+type:"GET",
+datatype:"html",
+success:function(resp){
+$("#modal-colegio .modal-body").html(resp);
 }
-$("#example1").DataTable();
+});
+});
+
+}
+$("#example1").DataTable(
+  
+);
 
 
 var map = L.map('map').setView([18.65657, -72.374343], 06);
