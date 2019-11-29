@@ -20,86 +20,98 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/index');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('index');
 		
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/footer');
 	}
 
 	//Entidades politicas
 	public function candidatos(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Entidades/Candidatos');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Entidades/Candidatos');
 		$this->load->view('plantillas/footer');		
 	}
-	
+	public function registrarCandidato(){
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Entidades/Registrar_Candidato');
+		$this->load->view('plantillas/footer');		
+	}
 	public function partidos(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Entidades/partidos');
-		$this->load->view('Administrador/plantillas/footer');		
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Entidades/partidos');
+		$this->load->view('plantillas/footer');		
+	}
+	public function registrarPartidos(){
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Entidades/Registrar_Partido');
+		$this->load->view('plantillas/footer');		
+		
 	}
 	//Votaciones Presidenciales
 	public function listadoPresidente(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones/Presidenciales');
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Votaciones Presidenciales/Presidenciales');
+		$this->load->view('plantillas/footer');
 	}
 	public function resultadoPre(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones/Resultado_presidente');
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Votaciones Presidenciales/resultado');
+		$this->load->view('plantillas/footer');
 	}
-	public function eleccionesViPre(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones Presidenciales/Senadores');
-		$this->load->view('Administrador/plantillas/footer');
+	public function eleccionesSena(){
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Votaciones Presidenciales/Senadores');
+		$this->load->view('plantillas/footer');
 	}
 	//Elecciones Congresuales
 	public function eleccionesDipu(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones Presidenciales/Diputado');
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Votaciones Presidenciales/Diputados');
+		$this->load->view('plantillas/footer');
 	}
 	
 	//Elecciones municipales
 	public function eleccionesAlcalde(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones municipales/Alcalde');
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Votaciones municipales/Alcalde');
+		$this->load->view('plantillas/footer');
 	}
 	public function eleccionesVAlcalde(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones municipales/ViceAlcalde');
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Votaciones municipales/ViceAlcalde');
+		$this->load->view('plantillas/footer');
 	}
 	//Colegios
 	public function colegiosTabla(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Colegios/Colegios');
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Colegios/Colegios');
+		$this->load->view('plantillas/footer');
 	}
 	
 	public function colegioMesa(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Colegios/Mesas');
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Colegios/Mesas');
+		$this->load->view('plantillas/footer');
 	}
 	
 	public function mesasVotantes(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/.Colegios/Votantes');
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('plantillas/encabezado');
+		$this->load->view('plantillas/left');
+		$this->load->view('Colegios/Votantes');
+		$this->load->view('plantillas/footer');
 	}
 }
