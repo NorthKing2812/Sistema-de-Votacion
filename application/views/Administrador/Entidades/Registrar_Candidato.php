@@ -33,7 +33,7 @@
             <!-- /.card-header -->
             <div class="card-body">
                     
-            <form action="<?=base_url('index.php/administracion/registrarCandidato')?>" method="post" enctype="multipart/form-data" >
+            <form action="<?=base_url('index.php/admin/registrarCandidato')?>" method="post" enctype="multipart/form-data" >
                     <input type="hidden" name="_token" value="<?=$this->nocsrf->generate($this->session->userdata('_token'))?>" >
                         <div class="row">
                             <div class="form-group col-md-4">

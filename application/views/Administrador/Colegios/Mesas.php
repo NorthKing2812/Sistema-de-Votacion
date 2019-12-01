@@ -46,7 +46,7 @@
                   <td>Mario Hernandez</td>
                   <td><a href="">2500</a></td>
                   <td>
-                        <a href="<?=base_url('index.php/Welcome/mesasVotantes')?>" class="btn btn-primary">Ver Votantes</a>
+                        <a href="<?=base_url('index.php/querySelect/mesasVotantes')?>" class="btn btn-primary">Ver Votantes</a>
                         <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
                         <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
@@ -57,7 +57,7 @@
                   <td>Juan Sanchez Hernandez</td>
                   <td><a href="">2220</a></td>
                   <td>
-                        <a href="<?=base_url('index.php/Welcome/mesasVotantes')?>" class="btn btn-primary">Ver Votantes</a>
+                        <a href="<?=base_url('index.php/querySelect/mesasVotantes')?>" class="btn btn-primary">Ver Votantes</a>
                         <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
                         <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>

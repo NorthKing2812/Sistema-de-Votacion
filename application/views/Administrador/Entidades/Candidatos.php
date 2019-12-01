@@ -41,13 +41,16 @@
                 </tr>
                 </thead>
                 <tbody>
+                 <?php if(isset($candidatos)):?>
+                <?php foreach ($candidatos as $candidato):?>
                 <tr>
-                  <td>25</td>
-                  <td>Leonel Fernandez Reina</td>
-                  <td><a href="">PLD</a></td>
-                  <td>Presidencial</td>
-                  <td>Santo Domingo Este</td>
-                  <td>Santo Domingo de Guzman</td>
+               
+                  <td><?=$candidato->id_candidato?></td>
+                  <td><?=$candidato->nombre.' '.$candidato->apellido?></td>
+                  <td><a href=""><?=$candidato->partido?></a></td>
+                  <td><?=$candidato->puesto?></td>
+                  <td><?=isset($candidato->municipio) ? $candidato->municipio : 'Na' ?></td>
+                  <td><?=isset($candidato->provincia) ? $candidato->provincia : 'Na'?></td>
                   <td>
                         <a href="" class="btn btn-success">Ver Votaciones</a>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
@@ -55,7 +58,9 @@
                         <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
                 </tr>
-                </tbody>
+                <?php endforeach;?>
+                <?php endif;?>  
+              </tbody>
               </table>
             </div>
             <!-- /.card-body -->

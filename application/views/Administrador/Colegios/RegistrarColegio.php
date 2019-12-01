@@ -64,11 +64,11 @@
                                     <input type="text" name="nombre" class="form-control">
 </div>
         
-<div class="form-group col-md-3 mr-4">
-                                <label for="">Sector:</label>
+<div class="form-group col-md-5">
+                                <label for="">Provincia/Municipio/Sector:</label>
                                 <select class="form-control select2" name="sector" style="width: 100%;">
                                  <?php foreach ($Sectores as $sector):?>
-                                    <option value="<?=$sector->id_sector?>"><?=$sector->nombre?></option>
+                                    <option value="<?=$sector->id_sector?>"><?=$sector->provincia.' / '.$sector->municipio.' / '.$sector->sector?></option>
                                  <?php endforeach;?>
                                 </select>
                               </div>

@@ -36,12 +36,7 @@ class Welcome extends CI_Controller {
 	}
 
 	//Entidades politicas
-	public function candidatos(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Entidades/Candidatos');
-		$this->load->view('Administrador/plantillas/footer');		
-	}
+	
 	public function registrarCandidato(){
 		$this->load->model('candidato_model','',true);
 		
@@ -60,12 +55,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('Administrador/Entidades/Registrar_Candidato',$datos);
 		$this->load->view('Administrador/plantillas/footer');		
 	}
-	public function partidos(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Entidades/partidos');
-		$this->load->view('Administrador/plantillas/footer');		
-	}
+	//Entidades partido
 	public function registrarPartidos(){
 		$this->load->view('Administrador/plantillas/encabezado');
 		$this->load->view('Administrador/plantillas/left');
@@ -73,53 +63,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('Administrador/plantillas/footer');		
 		
 	}
-	//Votaciones Presidenciales
-	public function listadoPresidente(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones Presidenciales/Presidenciales');
-		$this->load->view('Administrador/plantillas/footer');
-	}
-	public function resultadoPre(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones Presidenciales/resultado');
-		$this->load->view('Administrador/plantillas/footer');
-	}
-	public function eleccionesSena(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones Presidenciales/Senadores');
-		$this->load->view('Administrador/plantillas/footer');
-	}
-	//Elecciones Congresuales
-	public function eleccionesDipu(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones Presidenciales/Diputados');
-		$this->load->view('Administrador/plantillas/footer');
-	}
 	
-	//Elecciones municipales
-	public function eleccionesAlcalde(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones municipales/Alcalde');
-		$this->load->view('Administrador/plantillas/footer');
-	}
-	public function eleccionesVAlcalde(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Votaciones municipales/ViceAlcalde');
-		$this->load->view('Administrador/plantillas/footer');
-	}
-	//Colegios
-	public function colegiosTabla(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Colegios/Colegios');
-		$this->load->view('Administrador/plantillas/footer');
-	}
 	
 	public function registrarColegio(){
 		$this->load->model('Colegio_model','',true);
@@ -130,26 +74,8 @@ class Welcome extends CI_Controller {
 		$this->load->view('Administrador/plantillas/encabezado');
 		$this->load->view('Administrador/plantillas/left');
 		$this->load->view('Administrador/Colegios/RegistrarColegio',$datos);
-		$this->load->view('Administrador/plantillas/footer');
+		$this->load->view('Administrador/Colegios/plantilla/footer');
 	}
-	public function vistaColegio(){
-        $colegio = $this->input->post("id_colegio");
-        
-        $this->load->view('Administrador/Colegios/vista_colegio',$colegio);
-        
-    }
 	
-	//mesas y votantes
-	public function colegioMesa(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Colegios/Mesas');
-		$this->load->view('Administrador/plantillas/footer');
-	}
-	public function mesasVotantes(){
-		$this->load->view('Administrador/plantillas/encabezado');
-		$this->load->view('Administrador/plantillas/left');
-		$this->load->view('Administrador/Colegios/Votantes');
-		$this->load->view('Administrador/plantillas/footer');
-	}
+	
 }

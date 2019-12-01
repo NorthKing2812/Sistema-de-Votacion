@@ -46,53 +46,47 @@
                 <tr>
                   <td>2251</td>
                   <td>Liceo Prof. Simon Orozco </td>
-                  <td><a href="">Ver ubicacion</a></td>
+                  <td><a href="" class="btn-view-mapacolegio" data-toggle="modal" data-target="#modal-colegio">Ver ubicacion</a></td>
                   <td>Santo Domingo Este</td>
                   <td>X</td>
                   <td><span class="badge badge-success">Terminado.</span></td>
                   <td>
-                      <a href="<?=base_url('index.php/Welcome/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
+                      <a href="<?=base_url('index.php/querySelect/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
                      <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
                   Agregar mesa
                 </button>
-
-
-                        <a href="" class="btn btn-success"><span class="fas fa-table"></span></a>
-                        <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
                   </td>
                 </tr>
 
                 <tr>
                   <td>2252</td>
                   <td>Liceo Prof. Simon Orozco </td>
-                  <td><a href="">Ver ubicacion</a></td>
+                  <td><a href="" class="btn-view-mapacolegio" data-toggle="modal" data-target="#modal-colegio">Ver ubicacion</a></td>
                   <td>Santo Domingo Norte</td>
                   <td>X</td>
                   <td><span class="badge badge-warning">Incompleto.</span></td>
                   <td>
-                  <a href="<?=base_url('index.php/Welcome/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
+                  <a href="<?=base_url('index.php/querySelect/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
                   <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
                   Agregar mesa
                 </button>
-                        <a href="" class="btn btn-success"><span class="fas fa-table"></span></a>
-                        <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
+                        
                   </td>
                 </tr>
 
                 <tr>
                   <td>2253</td>
                   <td>Liceo Prof. Simon Orozco </td>
-                  <td><a href="">Ver ubicacion</a></td>
+                  <td><a href="" class="btn-view-mapacolegio" data-toggle="modal" data-target="#modal-colegio">Ver ubicacion</a></td>
                   <td>Santo Domingo Este</td>
                   <td>X</td>
                   <td><span class="badge badge-danger">Inactivo.</span></td>
                   <td>
-                  <a href="<?=base_url('index.php/Welcome/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
+                  <a href="<?=base_url('index.php/querySelect/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
                   <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
                   Agregar mesa
                 </button>
-                        <a href="" class="btn btn-success"><span class="fas fa-table"></span></a>
-                        <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
+                       
                   </td>
                 </tr>
                 </tbody>

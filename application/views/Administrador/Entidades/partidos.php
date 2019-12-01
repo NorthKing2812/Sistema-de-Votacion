@@ -44,35 +44,26 @@
                 </tr>
                 </thead>
                 <tbody>
+                <?php if(isset($partidos)):?>
+                <?php foreach ($partidos as $partido):?>
                 <tr>
-                  <td>1</td>
-                  <td><a href="">Partido de la Liberación Dominicana</a></td>
-                  <td>PLD</td>
-                  <td> <i class="fas fa-square" style="color:#9B0DE6;"></i>  <i class="fas fa-square" style="color:#EEFE00;"></i></td>
-                  <td>Danilo Medina</td>
+                  
+                <td><?=$partido->id_partido?></td>
+                  <td><a href=""><?=$partido->nombre?></a></td>
+                  <td><?=$partido->siglas?></td>
+                  <td> <i class="fas fa-square" style="color:<?=$partido->HexaColor1?>;"></i>  <i class="fas fa-square" style="color:<?=$partido->HexaColor2?>;"></i></td>
+                  <td><?=$partido->Presidente?></td>
                   <td>45</td>
-                  <td>Soy logo</td>
+                  <td><a href="<?=$partido->logo?>">Ver logo</a> </td>
                   <td>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
                         <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
                         <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
                 </tr>
-
-                <tr>
-                  <td>2</td>
-                  <td><a href="">Partido Revolucionario Dominicano</a></td>
-                  <td>PRD</td>
-                  <td> <i class="fas fa-square" style="color:#B3F6FC;"></i>  <i class="fas fa-square" style="color:#FFFFFF;"></i></td>
-                  <td>Miguel Vargas Maldonado</td>
-                  <td>45</td>
-                  <td>Soy logo</td>
-                  <td>
-                        <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
-                        <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
-                        <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
-                  </td>
-                </tr>
+                <?php endforeach;?>
+                <?php endif; ?>
+               
                 </tbody>
               </table>
             </div>

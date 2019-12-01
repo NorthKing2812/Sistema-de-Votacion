@@ -1,10 +1,11 @@
+ 
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="<?=base_url('asseut/AdminLTE-3.0.0/')?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="<?=base_url('asseut/AdminLTE-3.0.0/')?>dist/img/LOGO_JCE.svg.png" alt="JCE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Junta Central Electoral JCE</span>
     </a>
 
     <!-- Sidebar -->
@@ -61,7 +62,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/candidatos')?>" class="nav-link">
+                <a href="<?=base_url('index.php/querySelect/candidatos')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ver lista</p>
                 </a>
@@ -87,7 +88,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/partidos')?>" class="nav-link">
+                <a href="<?=base_url('index.php/querySelect/partidos')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ver lista</p>
                 </a>
@@ -115,7 +116,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/colegiosTabla')?>" class="nav-link">
+                <a href="<?=base_url('index.php/querySelect/colegiosTabla')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ver lista</p>
                 </a>
@@ -127,7 +128,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-person-booth"></i>
               <p>
-                Elecciones Presidenciales
+                Elecciones Presidenciales 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -142,7 +143,7 @@
     
               
     <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/listadoPresidente')?>" class="nav-link">
+                <a href="<?=base_url('index.php/querySelect/listadoPresidente')?>" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Listado</p>
                 </a>
@@ -155,19 +156,19 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-person-booth"></i>
               <p>
-                Elecciones Congresuales
+                Elecciones Congresuales 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/eleccionesSena')?>" class="nav-link">
+                <a href="<?=base_url('index.php/querySelect/eleccionesSena')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Senadores</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/eleccionesDipu')?>" class="nav-link">
+                <a href="<?=base_url('index.php/querySelect/eleccionesDipu')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Diputados</p>
                 </a>
@@ -192,13 +193,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/eleccionesAlcalde')?>" class="nav-link">
+                <a href="<?=base_url('index.php/querySelect/eleccionesAlcalde')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Alcalde</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/eleccionesVAlcalde')?>" class="nav-link">
+                <a href="<?=base_url('index.php/querySelect/eleccionesVAlcalde')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ViceAlcalde</p>
                 </a>

@@ -1,0 +1,1 @@
+<div id="mapid">Ver mapa</div>
