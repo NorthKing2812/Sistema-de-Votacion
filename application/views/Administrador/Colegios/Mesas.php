@@ -37,31 +37,33 @@
                   <th>No</th>
                   <th>Encargado</th>
                   <th>Cantidad de votantes</th>
+                  <th>Computadas</th>
                   <th>Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
+                <?=print_r($Mesas)?>
+                <?php foreach($Mesas as $mesa):?>
                 <tr>
-                  <td>22 51 B</td>
-                  <td>Mario Hernandez</td>
-                  <td><a href="">2500</a></td>
+                  <td><?=$mesa->mesa?></td>
+                  <td><?=$mesa->encargado?></td>
+                  <td><a href=""><?=$mesa->Cantidad_votantes?></a></td>
+                  <td>
+                  <?php if($mesa->Computada==1){
+                   echo "<small class='badge badge-success'>Si</small>";
+                  }else{
+                    echo "<small class='badge badge-danger'>No</small>";
+                  }
+                   ?>
+                   </td>
                   <td>
                         <a href="<?=base_url('index.php/querySelect/mesasVotantes')?>" class="btn btn-primary">Ver Votantes</a>
                         <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
                         <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
                 </tr>
-
-                <tr>
-                  <td>23 52 A</td>
-                  <td>Juan Sanchez Hernandez</td>
-                  <td><a href="">2220</a></td>
-                  <td>
-                        <a href="<?=base_url('index.php/querySelect/mesasVotantes')?>" class="btn btn-primary">Ver Votantes</a>
-                        <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
-                        <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
-                  </td>
-                </tr>
+                <?php endforeach;?>
+              
 
                 </tbody>
                 <tfoot>
@@ -69,6 +71,7 @@
                 <th>No</th>
                   <th>Encargado</th>
                   <th>Cantidad de votantes</th>
+                  <th>Computadas</th>
                   <th>Opciones</th>
                 </tr>
                 </tfoot>

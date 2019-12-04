@@ -13,14 +13,15 @@ class modalsChange extends CI_Controller {
     //Colegios
     public function vistaColegio(){
         $colegio = $this->input->post("id_colegio");
-        
         $this->load->view('Administrador/Colegios/vista_colegio',$colegio);
-        
     }
 	public function vistaMapaColegio(){
-        $colegio = $this->input->post("id_colegio");
+        $datos = array(
+            'latitud' => $this->input->post('latitud'),
+            'longitud' => $this->input->post('longitud')
+        ,);
         
-        $this->load->view('Administrador/Colegios/vista_map',$colegio);
+        $this->load->view('Administrador/Colegios/vista_map',$datos);
         
     }
 

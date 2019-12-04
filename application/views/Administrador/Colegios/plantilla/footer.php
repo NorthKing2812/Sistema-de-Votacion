@@ -32,7 +32,8 @@ $(function(){
     let base_url="<?=base_url()?>";
 //modal Mesas
     $('.btn-view-formcolegio').on("click",function(){
-let id_colegio=0;
+let id_colegio=$(this).val();
+console.log(id_colegio);
 $.ajax({
   url:base_url+ "index.php/modalsChange/vistaColegio",
   type:"POST",
@@ -48,34 +49,70 @@ $('.select2').select2({
     });
 //modal ver mapa
 $(".btn-view-mapacolegio").on('click',function(){
-let id_colegio=0;
+let coord= $(this).val().split(',');
+
 $.ajax({
 url:base_url+ "index.php/modalsChange/vistaMapaColegio",
   type:"POST",
   datatype:"html",
-  data:{id:id_colegio},
+  data:{latitud:latitud, longitud:longitud},
   success:function(data){
     $("#modal-colegio .modal-body").html(data);
   }
-
-
 });
 
 });
-// mapa del modal
 
-if($('#mapid').length>0){
-    var map = L.map('mapid').setView([51.505, -0.09], 13);
+//inputmask
+//inputmask-numeric
+$('#CodColegio').inputmask({
+  alias: 'numeric',
+  rightAlign: false, 
+  allowMinus: false,   
+  max: 9999
+});
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+//inputmask-coord
+$('.coordGeo').inputmask({
+  alias: 'decimal',   
+  digits:5,
+  rightAlign: true,
+  digitsOptional: false,
+  allowMinus: true,
+  groupSeparator: ",",
+  digits: 5,
+  max:99
+});
+//inputmask-tel
+$('#tel').inputmask("(999) 999-9999");
 
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+//inputmask-email
 
-}
+$('#email').inputmask("{1,20}@{1,20}.{3}[.{2}]")
+
+//Verificar si existe cod
+$('#verificar').on('click',function(){
+
+let codigo=$('#CodColegio').val();
+
+$.ajax({
+  url:base_url+ "index.php/querySelect/queryColegio",
+  type:"POST",
+  datatype:"html",
+  data:{colegio:codigo},
+  success:function(data){
+   
+    if(data=='1'){
+      alert('Existe');
+    $("#target :input").prop("disabled", true);
+  }else{
+    alert('No existe');
+    $("#target :input").prop("disabled", false); 
+  }
+  }
+});
+});
+
 });
 
 </script>

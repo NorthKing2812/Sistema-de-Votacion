@@ -6,7 +6,7 @@
 -- Generation Time: Dec 02, 2019 at 12:33 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
-
+CREATE DATABASE db_votacion;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -29,15 +29,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `candidato` (
-  `id_candidato` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `id_partido` int(11) NOT NULL,
-  `puesto` int(100) NOT NULL,
-  `foto` text NOT NULL,
-  `id_provincia` int(11) NOT NULL,
-  `id_municipio` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_candidato` INT(11) NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
+  `apellido` VARCHAR(100) NOT NULL,
+  `id_partido` INT(11) NOT NULL,
+  `puesto` INT(100) NOT NULL,
+  `foto` TEXT NOT NULL,
+  `id_provincia` INT(11) NOT NULL,
+  `id_municipio` INT(11) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `candidato`
@@ -53,10 +53,10 @@ INSERT INTO `candidato` (`id_candidato`, `nombre`, `apellido`, `id_partido`, `pu
 --
 
 CREATE TABLE `candidaturas` (
-  `id_candidato` int(11) NOT NULL,
-  `id_municipio` int(11) DEFAULT NULL,
-  `id_provincia` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_candidato` INT(11) NOT NULL,
+  `id_municipio` INT(11) DEFAULT NULL,
+  `id_provincia` INT(11) DEFAULT NULL
+) ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -65,12 +65,12 @@ CREATE TABLE `candidaturas` (
 --
 
 CREATE TABLE `colegio` (
-  `id_colegio` int(11) NOT NULL,
-  `nombre` varchar(200) NOT NULL,
-  `direccion` text NOT NULL,
-  `cant_mesa` int(11) NOT NULL,
-  `id_distrito` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_colegio` INT(11) NOT NULL,
+  `nombre` VARCHAR(200) NOT NULL,
+  `direccion` TEXT NOT NULL,
+  `cant_mesa` INT(11) NOT NULL,
+  `id_distrito` INT(11) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -79,10 +79,10 @@ CREATE TABLE `colegio` (
 --
 
 CREATE TABLE `municipio` (
-  `id_municipio` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `id_provincia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_municipio` INT(11) NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
+  `id_provincia` INT(11) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `municipio`
@@ -252,14 +252,14 @@ INSERT INTO `municipio` (`id_municipio`, `nombre`, `id_provincia`) VALUES
 --
 
 CREATE TABLE `partido` (
-  `id_partido` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `siglas` varchar(30) NOT NULL,
-  `Presidente` varchar(100) DEFAULT NULL,
-  `logo` varchar(1000) NOT NULL,
-  `HexaColor1` varchar(10) DEFAULT NULL,
-  `HexaColor2` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_partido` INT(11) NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
+  `siglas` VARCHAR(30) NOT NULL,
+  `Presidente` VARCHAR(100) DEFAULT NULL,
+  `logo` VARCHAR(1000) NOT NULL,
+  `HexaColor1` VARCHAR(10) DEFAULT NULL,
+  `HexaColor2` VARCHAR(10) DEFAULT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `partido`
@@ -276,9 +276,9 @@ INSERT INTO `partido` (`id_partido`, `nombre`, `siglas`, `Presidente`, `logo`, `
 --
 
 CREATE TABLE `provincia` (
-  `id_provincia` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_provincia` INT(11) NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `provincia`
@@ -325,9 +325,9 @@ INSERT INTO `provincia` (`id_provincia`, `nombre`) VALUES
 --
 
 CREATE TABLE `puesto` (
-  `id_puesto` int(3) NOT NULL,
-  `descripcion` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_puesto` INT(3) NOT NULL,
+  `descripcion` VARCHAR(80) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `puesto`
@@ -347,10 +347,10 @@ INSERT INTO `puesto` (`id_puesto`, `descripcion`) VALUES
 --
 
 CREATE TABLE `sector` (
-  `id_sector` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `id_municipio` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_sector` INT(11) NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
+  `id_municipio` INT(11) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sector`
@@ -593,9 +593,9 @@ INSERT INTO `sector` (`id_sector`, `nombre`, `id_municipio`) VALUES
 --
 
 CREATE TABLE `votante` (
-  `id_votante` int(11) NOT NULL,
-  `cedula` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_votante` INT(11) NOT NULL,
+  `cedula` VARCHAR(100) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -604,12 +604,12 @@ CREATE TABLE `votante` (
 --
 
 CREATE TABLE `votante_voto` (
-  `id_voto` int(11) NOT NULL,
-  `id_votante` int(11) NOT NULL,
-  `id_colegio` int(11) NOT NULL,
-  `id_candidato` int(11) NOT NULL,
-  `fecha_voto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_voto` INT(11) NOT NULL,
+  `id_votante` INT(11) NOT NULL,
+  `id_colegio` INT(11) NOT NULL,
+  `id_candidato` INT(11) NOT NULL,
+  `fecha_voto` INT(11) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -679,49 +679,49 @@ ALTER TABLE `votante_voto`
 -- AUTO_INCREMENT for table `candidato`
 --
 ALTER TABLE `candidato`
-  MODIFY `id_candidato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_candidato` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `colegio`
 --
 ALTER TABLE `colegio`
-  MODIFY `id_colegio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_colegio` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `municipio`
 --
 ALTER TABLE `municipio`
-  MODIFY `id_municipio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
+  MODIFY `id_municipio` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `partido`
 --
 ALTER TABLE `partido`
-  MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_partido` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `provincia`
 --
 ALTER TABLE `provincia`
-  MODIFY `id_provincia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_provincia` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `sector`
 --
 ALTER TABLE `sector`
-  MODIFY `id_sector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
+  MODIFY `id_sector` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
 
 --
 -- AUTO_INCREMENT for table `votante`
 --
 ALTER TABLE `votante`
-  MODIFY `id_votante` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_votante` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `votante_voto`
 --
 ALTER TABLE `votante_voto`
-  MODIFY `id_voto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_voto` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

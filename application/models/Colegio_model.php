@@ -17,6 +17,47 @@ class Colegio_model extends CI_Model {
         return $resultado->result();
     }
 
+    public function getColegios(){
+      $this->db->select("c.CODIGO_COLEGIO, c.NOMBRE as 'nombre', DIRECCION,latitud,longitud, mu.NOMBRE AS 'Municipio', COUNT(ms.id_mesa) as 'Cantidad_mesas'");
+        $this->db->from('COLEGIO c');
+        $this->db->join('SECTOR s', 'c.id_sector= s.id_sector', 'left');
+        $this->db->join('municipio as mu', ' mu.id_municipio = s.id_municipio');
+        $this->db->join('mesa ms', 'c.codigo_colegio = ms.codigo_colegio', 'left');
+        $this->db->group_by('c.CODIGO_COLEGIO');
+        $resultado = $this->db->get();
+        return $resultado->result();
+    }
+    //consultar un colegio
+    public function exitsColegio($codigoColegio){
+        $this->db->where('codigo_colegio', $codigoColegio);
+        $this->db->from('colegio');
+        $resultado= $this->db->get();
+        if($resultado->num_rows()>0){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    //getmesas
+    public function getmesas($codigoColegio){
+        $this->db->select(" mesa.id_mesa AS 'mesa', encargado, Computada, nombre, COUNT(votante.id_votante) AS 'Cantidad_votantes'");
+        $this->db->from('mesa');
+      $this->db->join('votante', 'votante.id_mesa = mesa.id_mesa','left');
+      $this->db->join('colegio', 'colegio.codigo_colegio = mesa.codigo_colegio');  
+      $this->db->where('mesa.codigo_colegio', $codigoColegio);
+        $this->db->group_by('mesa.id_mesa');
+        $resultado=$this->db->get();
+        return $resultado->result();
+        
+    }
+
+    public function getvotante($codigoMesa){
+        $this->db->where('id_mesa', $codigoMesa);
+        $resultado=$this->db->get('votante');
+        return $resultado->result();
+    }
+
 }
 
 /* End of file Colegio_model.php */

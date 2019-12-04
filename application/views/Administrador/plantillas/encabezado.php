@@ -28,7 +28,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<script>
+$(document).on('ready',function(){
+  // filter numeric
+  function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
 
+         return true;
+      }
+});
+</script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

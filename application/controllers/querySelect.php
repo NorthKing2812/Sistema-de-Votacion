@@ -76,23 +76,50 @@ public function eleccionesVAlcalde(){
 }
 //Colegios
 public function colegiosTabla(){
+    $this->load->model('Colegio_model','',true);
+    
+    $datos= array(
+        'Colegios'=> $this->Colegio_model->getColegios(),
+    );
     $this->load->view('Administrador/plantillas/encabezado');
     $this->load->view('Administrador/plantillas/left');
-    $this->load->view('Administrador/Colegios/Colegios');
+    $this->load->view('Administrador/Colegios/Colegios',$datos);
     $this->load->view('Administrador/Colegios/plantilla/footer');
 }
-
+//Consultar si existe el colegio
+public function queryColegio(){
+    $this->load->model('Colegio_model','',true);
+    $codigo_colegio= $this->input->post('colegio');
+    if($this->Colegio_model->exitsColegio($codigo_colegio)){
+        echo 0;
+    }else{
+        echo 1;
+    }
+}
 //mesas y votantes
 public function colegioMesa(){
+    $this->load->model('Colegio_model','',true);
+    $codigo_colegio = $this->input->get('colegio');
+    
+    $datos=array(
+        'Mesas'=> $this->Colegio_model->getmesas($codigo_colegio)
+    );
     $this->load->view('Administrador/plantillas/encabezado');
     $this->load->view('Administrador/plantillas/left');
-    $this->load->view('Administrador/Colegios/Mesas');
+    $this->load->view('Administrador/Colegios/Mesas',$datos);
     $this->load->view('Administrador/plantillas/footer');
 }
 public function mesasVotantes(){
+    $this->load->model('Colegio_model','',true);
+    $idMesa = $this->input->get('mesa');
+
+$datos = array(
+    'Votantes' => $this->Colegio_model->getvotante($idMesa), 
+);
+
     $this->load->view('Administrador/plantillas/encabezado');
     $this->load->view('Administrador/plantillas/left');
-    $this->load->view('Administrador/Colegios/Votantes');
+    $this->load->view('Administrador/Colegios/Votantes',$datos);
     $this->load->view('Administrador/plantillas/footer');
 }
 }

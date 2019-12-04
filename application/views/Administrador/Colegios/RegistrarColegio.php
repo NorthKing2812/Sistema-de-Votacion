@@ -34,12 +34,19 @@
                     
             <form action="<?=base_url('index.php/administracion/registrarCandidato')?>" method="post" enctype="multipart/form-data" >
                     <input type="hidden" name="_token" value="<?=$this->nocsrf->generate($this->session->userdata('_token'))?>" >
-                        <div class="row">
-                            <div class="form-group col-md-3">
+                        <div class="form-row align-items-center">
+                        <div class="form-group col-md-2">
                                 <label for="">Codigo del Colegio</label>
-                                <input type="text" name="imageCand" class="form-control" accept="image/*">
+                                <input type="text" id="CodColegio"  name="CodColegio" class="form-control" >
+                               
                                 </div>
-
+                               <div class="col-auto my-1">
+                               <input type="button" class="mt-3 btn btn-primary" value="Verificar si existe" id="verificar">
+                               </div>
+                               </div>
+<!--Div para invalidar input-->
+<div id="target">
+                        <div class="row">
                             <div class="form-group col-md-4">
                                     <label for="">Nombre del colegio</label>
                                     <input type="text" name="nombre" class="form-control">
@@ -57,11 +64,22 @@
 
 <div class="form-group col-md-3">
                                     <label for="">Correo Institucional:</label>
-                                    <input type="email" name="nombre" class="form-control">
+                                    <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-at"></i></span>
+                    </div>
+                    <input type="email" name="email" class="form-control">
+</div>
+
 </div>
 <div class="form-group col-md-3">
                                     <label for="">Telefono:</label>
-                                    <input type="text" name="nombre" class="form-control">
+                                    <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="tel">
+</div>
 </div>
         
 <div class="form-group col-md-5">
@@ -89,12 +107,12 @@
   <div class="col-md-4">
   <div class="form-group">
    <label for="">Latitud</label>
-   <input type="text" name="latitud" id="latitud" value="" class="form-control">
+   <input type="text" name="latitud" id="latitud" value="" class="form-control coordGeo">
    </div>
 
    <div class="form-group">
    <label for="">Longitud</label>
-   <input type="text" name="longitud" id="longitud" value="" class="form-control">
+   <input type="text" name="longitud" id="longitud" value="" class="form-control coordGeo">
    </div>
    <input type="button" class="btn btn-primary" id="coordenadas" value="Ver nueva ubicacion">
    </div>
@@ -106,6 +124,7 @@
         <button type="reset" class="btn btn-warning">Limpiar</button>
     </div>
 </div>
+</div><!--/. Invalidar input-->
                     </form>
                     <!--/.Form-->
                 </div>

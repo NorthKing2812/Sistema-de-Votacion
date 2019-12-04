@@ -36,47 +36,26 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                <th>id_votante</th>
                 <th>Cedula</th>
-                 <th>Nombre & Apellido</th>
-                 <th>Edad</th>
-                 <th>Sexo</th>
-                 <th>Foto</th>
+                <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                
+                <?php foreach ($votantes as $votante):?>
                 <tr>
-               <td>402-578954-3</td>
-               <td>Juan Antonio Bautista</td>
-               <td>25</td>
-               <td>M</td>
-               <td><a href="">Ver foto</a></td>
+                <td><?=$votante->id_votante?></td>
+               <td><?=$votante->cedula?></td>
+               <td></td>
                 </tr>
-                
-                <tr>
-               <td>402-578454-3</td>
-               <td>Fabiola Sanchez</td>
-               <td>25</td>
-               <td>F</td>
-               <td><a href="">Ver foto</a></td>
-                </tr>
-
-                <tr>
-               <td>403-528954-3</td>
-               <td>Antonio Mendez</td>
-               <td>32</td>
-               <td>M</td>
-               <td><a href="">Ver foto</a></td>
-                </tr>
+                <?php endforeach;?>
                 </tbody>
                 <tfoot>
                 <tr>
                 <tr>
+                <th>id_votante</th>
                 <th>Cedula</th>
-                 <th>Nombre & Apellido</th>
-                 <th>Edad</th>
-                 <th>Sexo</th>
-                 <th>Foto</th>
+                <th></th>
                 </tr>
                 </tr>
                 </tfoot>

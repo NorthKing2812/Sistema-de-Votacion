@@ -38,57 +38,29 @@
                   <th>Ubicacion</th>
                   <th>Provincias</th>
                   <th>Cantidad de mesas</th>
-                  <th>Estado</th>
+             
                   <th>Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
+  <?=print_r($Colegios)?>
+              <?php foreach($Colegios as $colegio):?>
                 <tr>
-                  <td>2251</td>
-                  <td>Liceo Prof. Simon Orozco </td>
-                  <td><a href="" class="btn-view-mapacolegio" data-toggle="modal" data-target="#modal-colegio">Ver ubicacion</a></td>
-                  <td>Santo Domingo Este</td>
-                  <td>X</td>
-                  <td><span class="badge badge-success">Terminado.</span></td>
-                  <td>
-                      <a href="<?=base_url('index.php/querySelect/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
-                     <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
+                  <td><?=$colegio->CODIGO_COLEGIO?></td>
+                  <td><?=$colegio->nombre?></td>
+                  <td><a href="" id="<?=$colegio->longitud?>,<?=$colegio->latitud?>" class="btn-view-mapacolegio" data-toggle="modal" data-target="#modal-colegio">Ver ubicacion</a></td>
+                  <td><?=$colegio->Municipio?></td>
+                  <td><?=$colegio->Cantidad_mesas?></td>
+                     <td>
+                  <input type="hidden" name="latitud" id="latitud[]" value="<?=$colegio->latitud?>">
+                  <input type="hidden" name="longitud" id="longitud[]" value="<?=$colegio->longitud?>">
+                      <a href="<?=base_url('index.php/querySelect/colegioMesa?colegio=').$colegio->CODIGO_COLEGIO?>" class="btn btn-primary">Ver mesas</a>
+                     <button class="btn btn-default bg-orange btn-view-formcolegio" value="<?=$colegio->CODIGO_COLEGIO?>" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
                   Agregar mesa
                 </button>
                   </td>
                 </tr>
-
-                <tr>
-                  <td>2252</td>
-                  <td>Liceo Prof. Simon Orozco </td>
-                  <td><a href="" class="btn-view-mapacolegio" data-toggle="modal" data-target="#modal-colegio">Ver ubicacion</a></td>
-                  <td>Santo Domingo Norte</td>
-                  <td>X</td>
-                  <td><span class="badge badge-warning">Incompleto.</span></td>
-                  <td>
-                  <a href="<?=base_url('index.php/querySelect/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
-                  <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
-                  Agregar mesa
-                </button>
-                        
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>2253</td>
-                  <td>Liceo Prof. Simon Orozco </td>
-                  <td><a href="" class="btn-view-mapacolegio" data-toggle="modal" data-target="#modal-colegio">Ver ubicacion</a></td>
-                  <td>Santo Domingo Este</td>
-                  <td>X</td>
-                  <td><span class="badge badge-danger">Inactivo.</span></td>
-                  <td>
-                  <a href="<?=base_url('index.php/querySelect/colegioMesa')?>" class="btn btn-primary">Ver mesas</a>
-                  <button type="button" class="btn btn-default bg-orange btn-view-formcolegio" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
-                  Agregar mesa
-                </button>
-                       
-                  </td>
-                </tr>
+              <?php endforeach;?>
                 </tbody>
                 <tfoot>
                 <tr>
@@ -97,7 +69,7 @@
                   <th>Ubicacion</th>
                   <th>Provincias</th>
                   <th>Cantidad de mesas</th>
-                  <th>Estado</th>
+            
                   <th>Opciones</th>
                 </tr>
                 </tfoot>
@@ -123,7 +95,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" >
                 
             </div>
             <div class="modal-footer justify-content-between">
