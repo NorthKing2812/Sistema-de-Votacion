@@ -63,6 +63,32 @@ class queryInsert extends CI_Controller {
             }
         }
     }
+    //Colegio Registrar
+    public function registrarColegio(){
+        $this->load->model('Colegio_model','',true);
+        $datos=array(
+            "Codigo_Colegio"=>$this->input->post('CodColegio'),
+            "nombre"=>$this->input->post('nombre'),
+            "director"=>$this->input->post('director'),
+            "email"=>$this->input->post('email'),
+            "id_sector"=>$this->input->post('sector'),
+            "direccion"=>$this->input->post('direccion'),
+            "latitud"=>$this->input->post('latitud'),
+            "longitud"=>$this->input->post('longitud'),
+        );
+        try {
+          $resultados= $this->Colegio_model->insertarColegio($datos);
+            if($resultados){
+                echo "Inserto";
+            }else{
+                echo "No se inserto";
+            }
+        
+        } catch (Exception $e) {
+           die();
+        }
+    }
+    //
 }
 
 /* End of file queryInsert.php */

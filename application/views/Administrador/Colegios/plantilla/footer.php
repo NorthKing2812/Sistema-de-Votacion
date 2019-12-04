@@ -69,7 +69,7 @@ $('#CodColegio').inputmask({
   alias: 'numeric',
   rightAlign: false, 
   allowMinus: false,   
-  max: 9999
+ mask:'9999'
 });
 
 //inputmask-coord

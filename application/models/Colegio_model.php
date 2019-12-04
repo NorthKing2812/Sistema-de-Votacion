@@ -27,7 +27,9 @@ class Colegio_model extends CI_Model {
         $resultado = $this->db->get();
         return $resultado->result();
     }
-    //consultar un colegio
+    
+    //Crud colegio
+    //QuerySelect
     public function exitsColegio($codigoColegio){
         $this->db->where('codigo_colegio', $codigoColegio);
         $this->db->from('colegio');
@@ -37,6 +39,49 @@ class Colegio_model extends CI_Model {
         }
         else{
             return true;
+        }
+    }
+    //QueryInsertar
+    public function insertarColegio($datos){
+      
+      try {
+        $this->db->insert('colegio', $datos);
+        if($this->db->affected_rows()>0){
+            return true;
+        }else{
+            return false;
+        }
+    
+      } catch (Exception $th) {
+          throw $th;
+      }  
+    }
+    //QueryActualizar
+    public function actualizarColegio($datos,$id_colegio){
+       try {
+        $this->db->where('codigo_colegio', $id_colegio);
+        $this->db->update('colegio', $datos);
+        if($this->db->affected_rows()>0){
+            return true;
+        }else{
+            return false;
+        }
+       } catch (Exception $th) {
+           throw $th;
+       }
+    }
+    //QueryEliminar
+    public function eliminarColegio($id_colegio){
+        try {
+            $this->db->where('codigo_colegio', $id_colegio);
+            $this->db->delete('colegio');
+            if($this->db->affected_rows()>0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception $th) {
+            throw $th;
         }
     }
     //getmesas
@@ -57,7 +102,7 @@ class Colegio_model extends CI_Model {
         $resultado=$this->db->get('votante');
         return $resultado->result();
     }
-
+    
 }
 
 /* End of file Colegio_model.php */

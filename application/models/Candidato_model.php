@@ -16,7 +16,6 @@ class Candidato_model extends CI_Model {
             throw $th;
         }
     }
-
     public function allCandidato(){
         
         $this->db->select("id_candidato, ca.nombre as 'nombre', apellido
@@ -31,7 +30,6 @@ class Candidato_model extends CI_Model {
         
         $resultado=$this->db->get();
         return $resultado->result();
-
     }
 
     public function obtenerPuestos(){

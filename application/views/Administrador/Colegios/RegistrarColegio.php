@@ -32,7 +32,7 @@
             <!-- /.card-header -->
             <div class="card-body">
                     
-            <form action="<?=base_url('index.php/administracion/registrarCandidato')?>" method="post" enctype="multipart/form-data" >
+            <form action="<?=base_url('index.php/queryInsert/registrarColegio')?>" method="post" enctype="multipart/form-data" >
                     <input type="hidden" name="_token" value="<?=$this->nocsrf->generate($this->session->userdata('_token'))?>" >
                         <div class="form-row align-items-center">
                         <div class="form-group col-md-2">
@@ -54,7 +54,7 @@
                     
 <div class="form-group col-md-4">
                                     <label for="">Director:</label>
-                                    <input type="text" name="nombre" class="form-control">
+                                    <input type="text" name="director" class="form-control">
 </div>
 </div>
 
@@ -78,7 +78,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-phone"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="tel">
+                    <input type="text" class="form-control" name="tel" id="tel">
 </div>
 </div>
         
@@ -92,7 +92,7 @@
                               </div>
       <div class="form-group col-md-6">
         <label for="">Direccion</label>
-            <textarea name="" class="form-control" id=""></textarea>        
+            <textarea name="direccion" class="form-control" id=""></textarea>        
       </div>                 
 </div>
 <!--/. Row-->

@@ -38,12 +38,11 @@
                   <th>Ubicacion</th>
                   <th>Provincias</th>
                   <th>Cantidad de mesas</th>
-             
                   <th>Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
-  <?=print_r($Colegios)?>
+
               <?php foreach($Colegios as $colegio):?>
                 <tr>
                   <td><?=$colegio->CODIGO_COLEGIO?></td>
@@ -58,21 +57,22 @@
                      <button class="btn btn-default bg-orange btn-view-formcolegio" value="<?=$colegio->CODIGO_COLEGIO?>" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
                   Agregar mesa
                 </button>
+                <a href="http://localhost/Sistema-de-Votacion/index.php/queryDelete/eliminarColegio?id_colegio=2225" class="btn btn-warning"><span class="fas fa-pen"></span></a>
+                        <a href="http://localhost/Sistema-de-Votacion/index.php/queryDelete/eliminarColegio?id_colegio=2225" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
+                
                 </tr>
               <?php endforeach;?>
                 </tbody>
                 <tfoot>
                 <tr>
-                <th>ID colegio</th>
+                  <th>Colegio Electoral</th>
                   <th>Nombre</th>
                   <th>Ubicacion</th>
                   <th>Provincias</th>
                   <th>Cantidad de mesas</th>
-            
                   <th>Opciones</th>
-                </tr>
-                </tfoot>
+                </tr></tfoot>
               </table>
             </div>
             <!-- /.card-body -->
