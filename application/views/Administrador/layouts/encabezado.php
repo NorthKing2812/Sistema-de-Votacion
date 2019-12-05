@@ -74,8 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <span class="dropdown-header">Opciones</span>
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item">
-            <a href="<?php echo base_url('index.php/auth/logout'); ?>"> Cerrar Sesión</a>
-  
+            
             </a>
                               
                             </ul>

@@ -57,7 +57,7 @@
                   <td><a href="<?=$partido->logo?>">Ver logo</a> </td>
                   <td>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
-                        <a href="<?=base_url('index.php/partido/edit?id_partido=').$partido->id_partido?>" class="btn btn-warning .btn-edit" data-toggle="modal" data-target="#modal-example"><span class="fas fa-pen"></span></a>
+                        <a href="<?=base_url('index.php/partido/edit?id_partido=').$partido->id_partido?>" class="btn btn-warning .btn-edit"><span class="fas fa-pen"></span></a>
                         <a href="<?=base_url('index.php/partido/delete?id_partido=').$partido->id_partido?>" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
                 </tr>
@@ -79,7 +79,7 @@
 </div>
 
 
-<div class="modal fade" id="modal-example">
+<div class="modal fade" id="modal-Partido">
         <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">

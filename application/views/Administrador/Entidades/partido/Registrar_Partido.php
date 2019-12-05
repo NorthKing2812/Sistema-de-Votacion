@@ -55,14 +55,18 @@
                        
                         <div class="form-group col-md-4">
                                 <label for="">Logo del partido</label>
-                                <input type="file" name="imagePartido" class="form-control">
+                                <div class="input-group">
+                          <div class="custom-file">
+                          <label class="custom-file-label" for="exampleInputFile">Selecciona una foto</label>
+                                <input type="file" name="custom-file-input"  class="form-control" accept="image/*">
                                 </div>
-
+                            </div>
+                            </div>
                             <div class="form-group col-md-3 mr-4">
                               <label for="">Color 1:</label>
                               <div class="input-group my-colorpicker1">
                              
-                              <input name="hexacolor1" type="text" class="form-control my-colorpicker1"  id="">
+                              <input name="hexacolor1" type="text" class="form-control my-colorpicker1"  id="" readonly>
 
                               <div class="input-group-append">
                       <span class="input-group-text"><i class="fas fa-square"></i></span>
@@ -73,7 +77,7 @@
                             <div class="form-group col-md-3 mr-4">
                               <label for="">Color 2:</label>
                               <div class="input-group my-colorpicker2">
-                             <input type="text" name="hexacolor2" class="form-control my-colorpicker2" id="">
+                             <input type="text" name="hexacolor2" class="form-control my-colorpicker2" id="" readonly>
 
                               <div class="input-group-append">
                       <span class="input-group-text"><i class="fas fa-square"></i></span>

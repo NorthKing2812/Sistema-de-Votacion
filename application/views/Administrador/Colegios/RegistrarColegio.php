@@ -32,13 +32,12 @@
             <!-- /.card-header -->
             <div class="card-body">
                     
-            <form action="<?=base_url('index.php/queryInsert/registrarColegio')?>" method="post" enctype="multipart/form-data" >
+            <form action="<?=base_url('index.php/colegio/add')?>" method="post" enctype="multipart/form-data" >
                     <input type="hidden" name="_token" value="<?=$this->nocsrf->generate($this->session->userdata('_token'))?>" >
                         <div class="form-row align-items-center">
                         <div class="form-group col-md-2">
                                 <label for="">Codigo del Colegio</label>
                                 <input type="text" id="CodColegio"  name="CodColegio" class="form-control" require>
-                               
                                 </div>
                              
                                </div>

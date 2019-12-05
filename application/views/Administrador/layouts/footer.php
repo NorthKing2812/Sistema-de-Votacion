@@ -111,7 +111,7 @@ $.ajax({
   type:'GET',
   datatype:"html",
   success:function(response){
-    $('#modal-example .modal-body').html(response);
+    $('#modal-Partido .modal-body').html(response);
   }
 });
 });

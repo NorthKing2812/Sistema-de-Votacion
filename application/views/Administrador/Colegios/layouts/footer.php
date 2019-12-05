@@ -138,7 +138,7 @@ $('#CodColegio').on('keyup',function(){
 let codigo=$(this).val();
 if(codigo.length ==4){
 $.ajax({
-  url:base_url+ "index.php/querySelect/queryColegio",
+  url:base_url+ "index.php/colegio/exits",
   type:"POST",
   datatype:"html",
   data:{colegio:codigo},

@@ -118,8 +118,8 @@ class partido extends CI_Controller {
 
     }
     public function delete(){
-        $id_candiato=$this->input->get('id_puesto');
-    if($this->Partido_model->eliminarPartido($id_puesto)){
+        $id_partido=$this->input->get('id_partido');
+    if($this->Partido_model->eliminarPartido($id_partido)){
         $this->session->set_flashdata("success","El registro se ha eliminado exitosamente");
             redirect(base_url('index.php/partido'));
     }else{

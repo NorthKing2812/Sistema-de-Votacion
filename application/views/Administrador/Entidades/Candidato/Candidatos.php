@@ -54,7 +54,7 @@
                   <td>
                         <a href="" class="btn btn-success">Ver Votaciones</a>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
-                        <a href="<?=base_url('index.php/Candidato/edit?id_candidato=').$candidato->id_candidato?>" class="btn btn-warning btn-edit" data-toggle="modal" data-target="#modal-example"><span class="fas fa-pen"></span></a>
+                        <a href="<?=base_url('index.php/Candidato/edit?id_candidato=').$candidato->id_candidato?>" class="btn btn-warning btn-edit" data-toggle="modal" data-target="#modal-Candidato"><span class="fas fa-pen"></span></a>
                         <a href="<?=base_url('index.php/Candidato/delete?id_candidato=').$candidato->id_candidato?>" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
                 </tr>
@@ -74,7 +74,7 @@
     <!-- /.content -->
 </div>
 
-<div class="modal fade" id="modal-example">
+<div class="modal fade" id="modal-Candidato">
         <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
