@@ -47,7 +47,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+  <!-- Right navbar links -->
+  <ul class="navbar-nav ml-auto">
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -58,12 +59,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
           <img src="<?=base_url('asseut/AdminLTE-3.0.0/')?>dist/img/avatar.png" class="user-image img-circle elevation-2" alt="User Image">
-          <span class="d-none d-md-inline">Roberto Herrera</span>
+          <span class="d-none d-md-inline"><?php echo $this->session->userdata("nombre")?></span>
         </a>
 </li>
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
-            class="fas fa-th-large"></i></a>
+                    <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fas fa-th-large"></i>
+        
+          </a>
+                            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                            <span class="dropdown-header">Opciones</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+            <a href="<?php echo base_url('index.php/auth/logout'); ?>"> Cerrar Sesión</a>
+  
+            </a>
+                              
+                            </ul>
+                        </li>
       </li>
     </ul>
+
+  <!---->
   </nav>
+
   <!-- /.navbar -->
