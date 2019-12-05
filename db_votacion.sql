@@ -1,6 +1,6 @@
 /*
-SQLyog Community v13.1.2 (64 bit)
-MySQL - 10.3.16-MariaDB : Database - db_votacion
+SQLyog Community v13.1.2 (32 bit)
+MySQL - 10.1.38-MariaDB : Database - db_votacion
 *********************************************************************
 */
 
@@ -25,15 +25,19 @@ CREATE TABLE `candidato` (
   `id_partido` int(11) NOT NULL,
   `puesto` int(100) NOT NULL,
   `foto` text NOT NULL,
-  `id_provincia` int(11) NOT NULL,
-  `id_municipio` int(11) NOT NULL,
+  `id_provincia` int(11) DEFAULT '0',
+  `id_municipio` int(11) DEFAULT '0',
+  `estado` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id_candidato`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `candidato` */
 
-insert  into `candidato`(`id_candidato`,`nombre`,`apellido`,`id_partido`,`puesto`,`foto`,`id_provincia`,`id_municipio`) values 
-(1,'Leonel','Fernandez',1,1,'ejemplo',0,0);
+insert  into `candidato`(`id_candidato`,`nombre`,`apellido`,`id_partido`,`puesto`,`foto`,`id_provincia`,`id_municipio`,`estado`) values 
+(1,'Leonel','Fernandez',1,1,'ejemplo',NULL,NULL,1),
+(2,'Pedro ','Santana',1,1,'1245191.jpg',NULL,NULL,1),
+(3,'Pedro ','dsds',1,3,'1245192.jpg',10,NULL,1),
+(4,'Gonzalo','Castillo',1,1,'Gonzalo_Foto_Campaña-1-1.jpg',NULL,NULL,1);
 
 /*Table structure for table `candidaturas` */
 
@@ -60,17 +64,25 @@ DROP TABLE IF EXISTS `colegio`;
 CREATE TABLE `colegio` (
   `codigo_colegio` int(11) NOT NULL,
   `nombre` varchar(200) NOT NULL,
+  `director` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `tel` varchar(100) NOT NULL DEFAULT '0',
+  `id_sector` int(11) DEFAULT NULL,
   `direccion` text NOT NULL,
-  `id_sector` int(11) NOT NULL,
   `latitud` varchar(30) DEFAULT NULL,
   `longitud` varchar(30) DEFAULT NULL,
+  `estado` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`codigo_colegio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `colegio` */
 
-insert  into `colegio`(`codigo_colegio`,`nombre`,`direccion`,`id_sector`,`latitud`,`longitud`) values 
-(2251,'Liceo Prof. Simon Orozco','\r\nCalle Prof. Manuel del Cabral',229,'-70.16','18.73');
+insert  into `colegio`(`codigo_colegio`,`nombre`,`director`,`email`,`tel`,`id_sector`,`direccion`,`latitud`,`longitud`,`estado`) values 
+(0,'Liceo Lilian Portalatin Sosa','Mario Mendez','-70.24500','8093458723',229,'18.02000',NULL,NULL,0),
+(2221,'Politecnico','Valenciano medina','claudiovalolz@gmail.com','0',1,'hola bro','','',0),
+(2222,'Liceo Simon Orozco','Mendez Sapata','LiceoOrozco@gmail.com','0',10,'calle tal tal tal','-69.08900','18.43560',1),
+(2225,'Liceo Lilian Portalatin Sosa','Juan Sanchez Martinez','Lilian@gmail.com','(809) 345-5678',34,' Calle Pedro Mir MZ 4689, Santo Domingo Este','-69.82360','18.50810',1),
+(2251,'Liceo Prof. Simon Orozco',NULL,NULL,'',NULL,'\r\nCalle Prof. Manuel del Cabral','-70.16','18.73',0);
 
 /*Table structure for table `mesa` */
 
@@ -80,11 +92,14 @@ CREATE TABLE `mesa` (
   `id_mesa` int(11) NOT NULL AUTO_INCREMENT,
   `encargado` varchar(200) DEFAULT NULL,
   `codigo_colegio` int(11) NOT NULL,
-  `Computada` tinyint(1) DEFAULT 0,
+  `Computada` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id_mesa`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `mesa` */
+
+insert  into `mesa`(`id_mesa`,`encargado`,`codigo_colegio`,`Computada`) values 
+(3,'Juan Sanchez',2225,1);
 
 /*Table structure for table `municipio` */
 
@@ -269,13 +284,14 @@ CREATE TABLE `partido` (
   `HexaColor1` varchar(10) DEFAULT NULL,
   `HexaColor2` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id_partido`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `partido` */
 
 insert  into `partido`(`id_partido`,`nombre`,`siglas`,`Presidente`,`logo`,`HexaColor1`,`HexaColor2`) values 
 (1,'Partido de la Liberacion Dominicana','PLD','Danilo Medina','foto','#8000FF','#FFFF00'),
-(2,'Partido Democrata Institucional','PDI','Ismael Reyes','PDI','#FF8000','#0040FF');
+(2,'Partido Democrata Institucional','PDI','Ismael Reyes','PDI','#FF8000','#0040FF'),
+(3,'Partido de la Liberacion Dominicana','PLD','Danilo Medina','Icono_estrellaPLD-12.png','#790168','#790168');
 
 /*Table structure for table `provincia` */
 
@@ -585,6 +601,33 @@ insert  into `sector`(`id_sector`,`nombre`,`id_municipio`) values
 (228,'La Caya',155),
 (229,'Invivienda',146);
 
+/*Table structure for table `usuarios` */
+
+DROP TABLE IF EXISTS `usuarios`;
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombres` varchar(100) DEFAULT NULL,
+  `apellidos` varchar(100) DEFAULT NULL,
+  `telefono` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `username` varchar(45) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `rol_id` int(11) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username_UNIQUE` (`username`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  KEY `fk_rol_usuarios_idx` (`rol_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `usuarios` */
+
+insert  into `usuarios`(`id`,`nombres`,`apellidos`,`telefono`,`email`,`username`,`password`,`rol_id`,`estado`) values 
+(2,'jose2','perez','8090','809','dsd','7110eda4d09e062aa5e4a390b0a572ac0d2c0220',1,0),
+(3,'122112211212','123','1221','2121','1221',NULL,NULL,1),
+(4,'cfdsf','fsdsdf','23132','3223','23223',NULL,NULL,1);
+
 /*Table structure for table `votante` */
 
 DROP TABLE IF EXISTS `votante`;
@@ -592,13 +635,13 @@ DROP TABLE IF EXISTS `votante`;
 CREATE TABLE `votante` (
   `id_votante` int(11) NOT NULL AUTO_INCREMENT,
   `cedula` varchar(100) NOT NULL,
-  `id_mesa` int(11) DEFAULT NULL,
+  `CodColegio` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_votante`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `votante` */
 
-insert  into `votante`(`id_votante`,`cedula`,`id_mesa`) values 
+insert  into `votante`(`id_votante`,`cedula`,`CodColegio`) values 
 (1,'402-578954-3	',1);
 
 /*Table structure for table `votante_voto` */
@@ -610,11 +653,15 @@ CREATE TABLE `votante_voto` (
   `id_votante` int(11) NOT NULL,
   `id_mesa` int(11) NOT NULL,
   `id_candidato` int(11) NOT NULL,
-  `fecha_voto` int(11) NOT NULL,
+  `fecha_voto` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_voto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `votante_voto` */
+
+insert  into `votante_voto`(`id_voto`,`id_votante`,`id_mesa`,`id_candidato`,`fecha_voto`) values 
+(1,1,3,1,'2019-12-05 02:31:57'),
+(2,1,1,3,'2019-12-12 09:52:22');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
