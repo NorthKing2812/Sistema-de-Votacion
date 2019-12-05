@@ -111,7 +111,7 @@ $.ajax({
   type:'GET',
   datatype:"html",
   success:function(response){
-    $('#modal-candidato .modal-body').html(response);
+    $('#modal-example .modal-body').html(response);
   }
 });
 });

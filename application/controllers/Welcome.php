@@ -31,7 +31,7 @@ class Welcome extends CI_Controller {
 	
 		$this->load->view('Administrador/layouts/encabezado');
 		$this->load->view('Administrador/layouts/left');
-		$this->load->view('Administrador/index',$datos);
+		$this->load->view('Administrador/index');
 		$this->load->view('Administrador/layouts/footer');
 	}
 
@@ -39,7 +39,6 @@ class Welcome extends CI_Controller {
 	
 	public function registrarCandidato(){
 	
-		);
 		$this->session->set_userdata($datos);
 		
 		$this->load->view('Administrador/layouts/encabezado');

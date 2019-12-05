@@ -42,12 +42,7 @@ public function countMesa(){
     $resultado=$this->db->get('mesa');
     return $resultado->row();
 }//cantidad de mesas computada
-public function countMesa(){
-  $this->db->select('count(*)');
-  $this->db->where('Computada', 1);
-  $resultado=$this->db->get('mesa');  
-    return $resultado->row();
-}
+
         //obtener votos de una mesa
         public function getvotos($codigoMesa){
             $this->db->select("id_voto,vt.cedula,ct.nombre AS 'cNombre',apellido as 'cApellido', puesto,vv.id_mesa");

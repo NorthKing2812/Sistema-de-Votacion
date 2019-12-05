@@ -82,13 +82,13 @@
             </a>
             <ul class="nav px-1 nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/registrarPartidos')?>" class="nav-link">
+                <a href="<?=base_url('index.php/partido/form')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/querySelect/partidos')?>" class="nav-link">
+                <a href="<?=base_url('index.php/partido/')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ver lista</p>
                 </a>

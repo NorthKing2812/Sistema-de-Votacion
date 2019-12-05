@@ -57,8 +57,8 @@
                   <td><a href="<?=$partido->logo?>">Ver logo</a> </td>
                   <td>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
-                        <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
-                        <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
+                        <a href="<?=base_url('index.php/partido/edit?id_partido=').$partido->id_partido?>" class="btn btn-warning .btn-edit" data-toggle="modal" data-target="#modal-example"><span class="fas fa-pen"></span></a>
+                        <a href="<?=base_url('index.php/partido/delete?id_partido=').$partido->id_partido?>" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
                 </tr>
                 <?php endforeach;?>
@@ -77,3 +77,26 @@
     </section>
     <!-- /.content -->
 </div>
+
+
+<div class="modal fade" id="modal-example">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Editar Partido</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" >
+                
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->

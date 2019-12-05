@@ -1,23 +1,3 @@
-<div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Partidos</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Entidad</li>
-              <li class="breadcrumb-item active">Partidos</li> 
-              <li class="breadcrumb-item active">Registrar</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
   <!-- Main content -->
   <section class="content">
       <div class="row">
@@ -32,22 +12,25 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-            <form action="<?=base_url('index.php/partido/add')?>" method="post" enctype="multipart/form-data" >
+            <form action="<?=base_url('index.php/partido/update')?>" method="post" enctype="multipart/form-data" >
                         <div class="row">
-                            
+                        <label for="">ID Partido: <?=$Partido->id_partido?></label>
+                        <input type="hidden" value="<?=$Partido->id_partido?>" name="id_partido">
+                        </div>
+                        <div class="row">   
                             <div class="form-group col-md-4">
                                     <label for="">Nombre:</label>
-                                    <input type="text" name="nombre" class="form-control">
+                                    <input type="text" value="<?=$Partido->nombre?>" name="nombre" class="form-control">
                                     </div>
                                         
                                 <div class="form-group col-md-2 mx-3">
                                     <label for="">Abreviatura:</label>
-                                    <input type="text" name="sigla" class="form-control">
+                                    <input type="text" value="<?=$Partido->siglas?>" name="sigla" class="form-control">
                                     </div>
                     
                                     <div class="form-group col-md-4">
                                     <label for="">Presidente:</label>
-                                    <input type="text" name="presidente" class="form-control">
+                                    <input type="text" value="<?=$Partido->Presidente?>" name="presidente" class="form-control">
                                 </div>
                                       
 </div>
@@ -62,7 +45,7 @@
                               <label for="">Color 1:</label>
                               <div class="input-group my-colorpicker1">
                              
-                              <input name="hexacolor1" type="text" class="form-control my-colorpicker1"  id="">
+                              <input name="hexacolor1" value="<?=$Partido->HexaColor1?>" type="text" class="form-control my-colorpicker1"  id="">
 
                               <div class="input-group-append">
                       <span class="input-group-text"><i class="fas fa-square"></i></span>
@@ -73,7 +56,7 @@
                             <div class="form-group col-md-3 mr-4">
                               <label for="">Color 2:</label>
                               <div class="input-group my-colorpicker2">
-                             <input type="text" name="hexacolor2" class="form-control my-colorpicker2" id="">
+                             <input type="text"  value="<?=$Partido->HexaColor1?>" name="hexacolor2" class="form-control my-colorpicker2" id="">
 
                               <div class="input-group-append">
                       <span class="input-group-text"><i class="fas fa-square"></i></span>

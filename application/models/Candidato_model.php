@@ -46,7 +46,7 @@ class Candidato_model extends CI_Model {
         
         $this->db->select("id_candidato, ca.nombre as 'nombre', apellido
         ,pa.id_partido,pa.nombre as 'partido', pu.descripcion as 'puesto'
-        ,pr.id_provincia,pr.nombre as 'provincia',mu.id_municipio, mu.nombre as 'municipio'");
+        ,pr.id_provincia,pr.nombre as 'provincia' ,mu.id_municipio , mu.nombre as 'municipio'");
         $this->db->from('candidato ca');
         $this->db->join('partido pa', 'pa.id_partido = ca.id_candidato');
         $this->db->join('puesto pu', 'pu.id_puesto = ca.puesto');
