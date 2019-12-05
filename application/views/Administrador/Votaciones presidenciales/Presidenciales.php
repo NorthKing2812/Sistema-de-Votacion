@@ -44,36 +44,25 @@
                  <th>Candidato</th>
                  <th>Partido</th>
                  <th>Cantidad de votos</th>
-                 <th>Grafica</th>
+                 <th>Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                <tr>
-                  <td>1</td>
-                  <td>Leonel Fernandez Reina </td>
-                  <td><a href="">PLD</a></td>
-                  <td>250,000</td>
-                  <td><div class="progress progress-sm active">
-  <div class="progress-bar bg-success" role="progressbar"
-       aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div></td>
+                <?php foreach($Presidentes as $candidato):?>
+                <td><?=$candidato->id_candidato?></td>
+                  <td><?=$candidato->nombre.' '.$candidato->apellido?></td>
+                  <td><a href=""><?=$candidato->partido?></a></td>
+                  <td><?=$candidato->Cantidad_votos?></td>
+                  <td>
+                        <a href="" class="btn btn-success">Ver Votaciones</a>
+                        <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
+                        <a href="<?=base_url('index.php/Candidato/edit?id_candidato=').$candidato->id_candidato?>" class="btn btn-warning btn-edit" data-toggle="modal" data-target="#modal-candidato"><span class="fas fa-pen"></span></a>
+                        <a href="<?=base_url('index.php/Candidato/delete?id_candidato=').$candidato->id_candidato?>" class="btn btn-danger"><span class="fas fa-cut"></span></a>
+                  </td>
                 </tr>
-                
-                <tr>
-                  <td>2</td>
-                  <td>Luis Abinader</td>
-                  <td><a href="">PRM</a></td>
-                  <td>275,000</td>
-                  <td><div class="progress progress-sm active">
-  <div class="progress-bar bg-success" role="progressbar"
-       aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 37%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div></td>
-                </tr>
+                <?php endforeach;?>
+
                 </tbody>
                 <tfoot>
                 <tr>
@@ -98,3 +87,26 @@
     </section>
     <!-- /.content -->
 </div>
+
+
+<div class="modal fade" id="modal-candidato">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Editar Candidato</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" >
+                
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->

@@ -13,6 +13,10 @@
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>dist/js/adminlte.min.js"></script>
 <!-- Select2 -->
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/select2/js/select2.full.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/toastr/toastr.min.js"></script>
 <!-- InputMask -->
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/moment/moment.min.js"></script>
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
@@ -29,16 +33,45 @@
 <script>
 
 $(function(){
+  
+//DataTable
+$("#example1").DataTable();
+//Alerts
+const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+    <?php 
+    if($this->session->flashdata("error")){
+      echo "
+      $('.toastsDefaultAutohide').click(function() {
+        $(document).Toasts('create', {
+          title: 'Error',
+          class: 'bg-danger', 
+          autohide: true,
+          delay: 750,
+          body: '{$this->session->flashdata("error")}'
+        })
+      });
+      ";
+                                                
+                          }
+    if($this->session->flashdata("success")){
+                            echo "toastr.success('{$this->session->flashdata("success")}');";
+                          }
+                          ?>
     let base_url="<?=base_url()?>";
 //modal Mesas
-    $('.btn-view-formcolegio').on("click",function(){
+$('.btn-view-formcolegio').on("click",function(){
 let id_colegio=$(this).val();
-console.log(id_colegio);
 $.ajax({
-  url:base_url+ "index.php/modalsChange/vistaColegio",
-  type:"POST",
+  url:base_url+ "index.php/Mesas/form",
+  type:"GET",
   datatype:"html",
-  data:{id:id_colegio},
+  data:{id_colegio:id_colegio},
   success:function(data){
     $("#modal-colegio .modal-body").html(data);
   }
@@ -49,19 +82,26 @@ $('.select2').select2({
     });
 //modal ver mapa
 $(".btn-view-mapacolegio").on('click',function(){
-let coord= $(this).val().split(',');
 
+
+
+});// End modal ver mapa
+
+
+$('.btn-edit').on('click',function(event){
+  event.preventDefault();
+let href = $(this).attr('href');
+console.log(href);
 $.ajax({
-url:base_url+ "index.php/modalsChange/vistaMapaColegio",
-  type:"POST",
+  url:href,
+  type:'GET',
   datatype:"html",
-  data:{latitud:latitud, longitud:longitud},
-  success:function(data){
-    $("#modal-colegio .modal-body").html(data);
+  success:function(response){
+    $('#modal-colegio .modal-body').html(response);
   }
 });
 
-});
+});// End modal edit
 
 //inputmask
 //inputmask-numeric
@@ -91,28 +131,69 @@ $('#tel').inputmask("(999) 999-9999");
 $('#email').inputmask("{1,20}@{1,20}.{3}[.{2}]")
 
 //Verificar si existe cod
-$('#verificar').on('click',function(){
-
-let codigo=$('#CodColegio').val();
-
+//Deshibilitar todos los input:
+$("#target :input").prop("disabled", true);
+$('#CodColegio').on('keyup',function(){
+ 
+let codigo=$(this).val();
+if(codigo.length ==4){
 $.ajax({
   url:base_url+ "index.php/querySelect/queryColegio",
   type:"POST",
   datatype:"html",
   data:{colegio:codigo},
   success:function(data){
-   
     if(data=='1'){
-      alert('Existe');
+      Toast.fire({
+        type: 'error',
+        title: 'Codigo invalido:existe un colegio con ese codigo.'
+      })
     $("#target :input").prop("disabled", true);
   }else{
-    alert('No existe');
+    
+      Toast.fire({
+        type: 'success',
+        title: 'Codigo valido: codigo ingresado disponible.'
+      })
     $("#target :input").prop("disabled", false); 
   }
+ 
   }
 });
+}
 });
 
+      
+
+$('.checked-computado').on('click',function(){
+  let mesa=$(this).val();
+  let computado;
+  if( $(this).is(':checked') ){
+    computado=1;
+     } else {
+     computado=0;
+    }
+     $.ajax({
+      url:base_url+'index.php/Mesas/changeComputo',
+      type:'POST',
+      data:{computo:computado,id_mesa:mesa},
+      success:function(data){
+        if(data==1){
+          $(this).prop('checked',true); 
+          Toast.fire({
+        type: 'success',
+        title: 'Mesa computarizada.'
+      })
+        }if(data==0){
+          $(this).prop('checked',false);
+          Toast.fire({
+        type: 'success',
+        title: 'Mesa no computarizada.'
+      })
+        }
+      },
+     });
+});
 });
 
 </script>

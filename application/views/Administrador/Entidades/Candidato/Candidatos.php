@@ -49,13 +49,13 @@
                   <td><?=$candidato->nombre.' '.$candidato->apellido?></td>
                   <td><a href=""><?=$candidato->partido?></a></td>
                   <td><?=$candidato->puesto?></td>
-                  <td><?=isset($candidato->municipio) ? $candidato->municipio : 'Na' ?></td>
-                  <td><?=isset($candidato->provincia) ? $candidato->provincia : 'Na'?></td>
+                  <td><?=isset($candidato->id_municipio) ? $candidato->municipio : 'Na' ?></td>
+                  <td><?=isset($candidato->id_provincia) ? $candidato->provincia : 'Na'?></td>
                   <td>
                         <a href="" class="btn btn-success">Ver Votaciones</a>
                         <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
-                        <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
-                        <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
+                        <a href="<?=base_url('index.php/Candidato/edit?id_candidato=').$candidato->id_candidato?>" class="btn btn-warning btn-edit" data-toggle="modal" data-target="#modal-candidato"><span class="fas fa-pen"></span></a>
+                        <a href="<?=base_url('index.php/Candidato/delete?id_candidato=').$candidato->id_candidato?>" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
                 </tr>
                 <?php endforeach;?>
@@ -73,3 +73,25 @@
     </section>
     <!-- /.content -->
 </div>
+
+<div class="modal fade" id="modal-candidato">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Editar Candidato</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" >
+                
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->

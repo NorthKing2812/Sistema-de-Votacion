@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Partido_model extends CI_Model {
 
-    public function obtenerPartidos(){
+    public function getPartidos(){
         
         $this->db->from('partido');
         $resultados= $this->db->get();

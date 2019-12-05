@@ -37,19 +37,17 @@
                         <div class="form-row align-items-center">
                         <div class="form-group col-md-2">
                                 <label for="">Codigo del Colegio</label>
-                                <input type="text" id="CodColegio"  name="CodColegio" class="form-control" >
+                                <input type="text" id="CodColegio"  name="CodColegio" class="form-control" require>
                                
                                 </div>
-                               <div class="col-auto my-1">
-                               <input type="button" class="mt-3 btn btn-primary" value="Verificar si existe" id="verificar">
-                               </div>
+                             
                                </div>
 <!--Div para invalidar input-->
 <div id="target">
                         <div class="row">
                             <div class="form-group col-md-4">
                                     <label for="">Nombre del colegio</label>
-                                    <input type="text" name="nombre" class="form-control">
+                                    <input type="text" name="nombre" class="form-control" require>
 </div>
                     
 <div class="form-group col-md-4">
@@ -84,7 +82,7 @@
         
 <div class="form-group col-md-5">
                                 <label for="">Provincia/Municipio/Sector:</label>
-                                <select class="form-control select2" name="sector" style="width: 100%;">
+                                <select class="form-control select2" name="sector" style="width: 100%;" require>
                                  <?php foreach ($Sectores as $sector):?>
                                     <option value="<?=$sector->id_sector?>"><?=$sector->provincia.' / '.$sector->municipio.' / '.$sector->sector?></option>
                                  <?php endforeach;?>

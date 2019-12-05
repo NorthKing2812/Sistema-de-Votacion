@@ -19,6 +19,8 @@
   <!-- Main content -->
   <section class="content">
       <div class="row">
+
+      
           <div class="col-12">
           <div class="card">
             <div class="card-header">
@@ -30,6 +32,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+            
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -38,6 +41,7 @@
                   <th>Ubicacion</th>
                   <th>Provincias</th>
                   <th>Cantidad de mesas</th>
+                  <th></th>
                   <th>Opciones</th>
                 </tr>
                 </thead>
@@ -53,26 +57,20 @@
                      <td>
                   <input type="hidden" name="latitud" id="latitud[]" value="<?=$colegio->latitud?>">
                   <input type="hidden" name="longitud" id="longitud[]" value="<?=$colegio->longitud?>">
-                      <a href="<?=base_url('index.php/querySelect/colegioMesa?colegio=').$colegio->CODIGO_COLEGIO?>" class="btn btn-primary">Ver mesas</a>
+                      <a href="<?=base_url('index.php/Mesas/index?colegio=').$colegio->CODIGO_COLEGIO?>" class="btn btn-primary">Ver mesas</a>
                      <button class="btn btn-default bg-orange btn-view-formcolegio" value="<?=$colegio->CODIGO_COLEGIO?>" style="color:#fff;" data-toggle="modal" data-target="#modal-colegio">
                   Agregar mesa
                 </button>
-                <a href="http://localhost/Sistema-de-Votacion/index.php/queryDelete/eliminarColegio?id_colegio=2225" class="btn btn-warning"><span class="fas fa-pen"></span></a>
-                        <a href="http://localhost/Sistema-de-Votacion/index.php/queryDelete/eliminarColegio?id_colegio=2225" class="btn btn-danger"><span class="fas fa-cut"></span></a>
-                  </td>
+                 </td>
+               <td>
+               <a href="http://localhost/Sistema-de-Votacion/index.php/Colegio/edit?id_colegio=<?=$colegio->CODIGO_COLEGIO?>" class="btn btn-warning btn-edit" data-toggle="modal" data-target="#modal-colegio"><span class="fas fa-pen"></span></a>
+                        <a href="http://localhost/Sistema-de-Votacion/index.php/Colegio/delete?id_colegio=<?=$colegio->CODIGO_COLEGIO?>" class="btn btn-danger btn-delete"><span class="fas fa-cut"></span></a>
                 
+               </td> 
                 </tr>
               <?php endforeach;?>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>Colegio Electoral</th>
-                  <th>Nombre</th>
-                  <th>Ubicacion</th>
-                  <th>Provincias</th>
-                  <th>Cantidad de mesas</th>
-                  <th>Opciones</th>
-                </tr></tfoot>
+            
               </table>
             </div>
             <!-- /.card-body -->

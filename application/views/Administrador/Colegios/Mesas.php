@@ -36,28 +36,32 @@
                 <tr>
                   <th>No</th>
                   <th>Encargado</th>
-                  <th>Cantidad de votantes</th>
+                  <th>Cantidad de votos</th>
                   <th>Computadas</th>
                   <th>Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?=print_r($Mesas)?>
                 <?php foreach($Mesas as $mesa):?>
                 <tr>
                   <td><?=$mesa->mesa?></td>
                   <td><?=$mesa->encargado?></td>
                   <td><a href=""><?=$mesa->Cantidad_votantes?></a></td>
+                
                   <td>
+                  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
                   <?php if($mesa->Computada==1){
-                   echo "<small class='badge badge-success'>Si</small>";
+                   echo " <input type='checkbox' value='{$mesa->mesa}' class='custom-control-input checked-computado' id='customSwitch3' checked=true>";
                   }else{
-                    echo "<small class='badge badge-danger'>No</small>";
+                    echo "<input type='checkbox' value='{$mesa->mesa}' class='custom-control-input checked-computado' id='customSwitch3'>";
                   }
+                  
                    ?>
+                       <label class="custom-control-label" for="customSwitch3"></label>
+                    </div>
                    </td>
                   <td>
-                        <a href="<?=base_url('index.php/querySelect/mesasVotantes')?>" class="btn btn-primary">Ver Votantes</a>
+                        <a href="<?=base_url('index.php/votos?mesa=').$mesa->mesa?>" class="btn btn-primary">Ver Votantes</a>
                         <a href="" class="btn btn-warning"><span class="fas fa-pen"></span></a>
                         <a href="" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
@@ -66,15 +70,7 @@
               
 
                 </tbody>
-                <tfoot>
-                <tr>
-                <th>No</th>
-                  <th>Encargado</th>
-                  <th>Cantidad de votantes</th>
-                  <th>Computadas</th>
-                  <th>Opciones</th>
-                </tr>
-                </tfoot>
+             
               </table>
             </div>
             <!-- /.card-body -->

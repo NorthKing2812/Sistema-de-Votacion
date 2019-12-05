@@ -29,12 +29,18 @@
 <!-- Bootstrap4 Duallistbox -->
 
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-
+<!-- SweetAlert2 -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/toastr/toastr.min.js"></script>
 <!-- InputMask -->
 
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/moment/moment.min.js"></script>
 
 <script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+
+<!-- bs-custom-file-input -->
+<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 
 <!-- date-range-picker -->
 
@@ -74,15 +80,42 @@
 
 
 
-<!-- PAGE SCRIPTS -->
-
-<script src="<?=base_url('asseut/AdminLTE-3.0.0/')?>dist/js/pages/dashboard2.js"></script>
 
 <script>
 $(function(){
 
+//Error & success alerts
+//Alerts
+const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+<?php 
+    if($this->session->flashdata("error")){
+      echo "toastr.error('{$this->session->flashdata("error")}');";
+                                                
+                          }
+    if($this->session->flashdata("success")){
+                            echo "toastr.success('{$this->session->flashdata("success")}');";
+                          }
+    ?>
+//
+//modals candidato
+$('.btn-edit').on('click',function(event){
+  event.preventDefault();
+let href = $(this).attr('href');
+$.ajax({
+  url:href,
+  type:'GET',
+  datatype:"html",
+  success:function(response){
+    $('#modal-candidato .modal-body').html(response);
+  }
+});
+});
 let base_url="<?=base_url()?>";
-
 if($('#bar-chart').length>0){
         /*
      * BAR CHART
@@ -145,10 +178,10 @@ $.ajax({
 });
 
 //Puestos cambios
-$("#puestos").val().change(function(){
+$("#puestos").change(function(){
 
-let puestos = $(this).val();
-alert(puestos);
+$("#puestos option:selected").each(function(){
+  let puestos = $(this).val();
 if(puestos ==2 || puestos==3){
 $('#provincia').prop('disabled', false);
 }else{
@@ -161,10 +194,13 @@ if(puestos==4||puestos==5){
   $('#municipio').prop('disabled', true);
 
 }
+});
+
 
 });
 
-var map = L.map('map').setView([18.65657, -72.374343], 06);
+if($('#map').lenght>0){
+  var map = L.map('map').setView([18.65657, -72.374343], 06);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -173,7 +209,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([18.256, -62.27]).addTo(map)
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
     .openPopup();
-
+}
 });
 </script>
 </body>

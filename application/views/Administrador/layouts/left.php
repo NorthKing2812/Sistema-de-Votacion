@@ -56,13 +56,13 @@
             </a>
             <ul class="nav  px-1 nav-treeview">
               <li class=" nav-item">
-                <a href="<?=base_url('index.php/Welcome/registrarCandidato')?>" class="nav-link">
+                <a href="<?=base_url('index.php/Candidato/form')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/querySelect/candidatos')?>" class="nav-link">
+                <a href="<?=base_url('index.php/Candidato/')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ver lista</p>
                 </a>
@@ -110,13 +110,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/registrarColegio')?>" class="nav-link">
+                <a href="<?=base_url('index.php/Colegio/form')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/querySelect/colegiosTabla')?>" class="nav-link">
+                <a href="<?=base_url('index.php/Colegio/')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ver lista</p>
                 </a>
@@ -135,7 +135,7 @@
             <ul class="nav nav-treeview">
 
             <li class="nav-item">
-                <a href="<?=base_url('index.php/Welcome/resultadoPre')?>" class="nav-link">
+                <a href="<?=base_url()?>" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Resultados</p>
                 </a>
@@ -143,7 +143,7 @@
     
               
     <li class="nav-item">
-                <a href="<?=base_url('index.php/querySelect/listadoPresidente')?>" class="nav-link">
+                <a href="<?=base_url('index.php/eleccione')?>" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Listado</p>
                 </a>
@@ -162,13 +162,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url('index.php/querySelect/eleccionesSena')?>" class="nav-link">
+                <a href="<?=base_url('index.php/eleccione/eleccionesSena')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Senadores</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/querySelect/eleccionesDipu')?>" class="nav-link">
+                <a href="<?=base_url('index.php/eleccione/eleccionesDipu')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Diputados</p>
                 </a>
@@ -193,13 +193,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/querySelect/eleccionesAlcalde')?>" class="nav-link">
+                <a href="<?=base_url('index.php/eleccione/eleccionesAlcalde')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Alcalde</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('index.php/querySelect/eleccionesVAlcalde')?>" class="nav-link">
+                <a href="<?=base_url('index.php/eleccione/eleccionesVAlcalde')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ViceAlcalde</p>
                 </a>

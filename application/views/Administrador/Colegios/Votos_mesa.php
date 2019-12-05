@@ -36,29 +36,25 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                <th>id_votante</th>
+                <th>id_voto</th>
                 <th>Cedula</th>
+                <th>Candidato</th>
+                <th>Clasificacion</th>
                 <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($votantes as $votante):?>
+                <?php foreach ($votos as $voto):?>
                 <tr>
-                <td><?=$votante->id_votante?></td>
-               <td><?=$votante->cedula?></td>
+                <td><?=$voto->id_voto?></td>
+               <td><?=$voto->cedula?></td>
+               <td><?=$voto->cNombre.' '.$voto->cApellido?></td>
+               <td><?=$voto->puesto?></td>
                <td></td>
                 </tr>
                 <?php endforeach;?>
                 </tbody>
-                <tfoot>
-                <tr>
-                <tr>
-                <th>id_votante</th>
-                <th>Cedula</th>
-                <th></th>
-                </tr>
-                </tr>
-                </tfoot>
+             
               </table>
             </div>
             <!-- /.card-body -->

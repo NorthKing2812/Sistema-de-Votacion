@@ -28,24 +28,17 @@ class Welcome extends CI_Controller {
 	 
 	public function index()
 	{
+	
 		$this->load->view('Administrador/layouts/encabezado');
 		$this->load->view('Administrador/layouts/left');
-		$this->load->view('Administrador/index');
-		$this->load->view(' /layouts/footer');
+		$this->load->view('Administrador/index',$datos);
+		$this->load->view('Administrador/layouts/footer');
 	}
 
 	//Entidades politicas
 	
 	public function registrarCandidato(){
-		$this->load->model('candidato_model','',true);
-		
-		$datosSession = array(
-			'_token' => null
-		);
-		//
-		$datos= array(
-			'Puestos'=>$this->candidato_model->obtenerPuestos()
-
+	
 		);
 		$this->session->set_userdata($datos);
 		

@@ -9,11 +9,7 @@ class queryDelete extends CI_Controller {
     {
         
     }
-    public function eliminarColegio(){
-        $this->load->model('Colegio_model','',true);
-        $id_colegio=$this->input->get('name');
 
-    }
 }
 
 /* End of file queryDelete.php */

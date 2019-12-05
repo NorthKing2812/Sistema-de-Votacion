@@ -32,59 +32,34 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                  <th>ID Candidato</th>
-                 <th>Candidato</th>
+                 <th>Nombre y Apellido</th>
                  <th>Partido</th>
-                 <th>Municipo</th>
+                 <th>Provincia</th>
                  <th>Cantidad de votos</th>
-                 <th>Grafica</th>
+                 <th>Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                <tr>
-                  <td>1</td>
-                  <td>Leonel Fernandez Reina </td>
-                  <td><a href="">PLD</a></td>
-                  <td><a>Santo Domingo Este</a></td>
-                  <td>250,000</td>
-                  <td><div class="progress progress-sm active">
-  <div class="progress-bar bg-success" role="progressbar"
-       aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div></td>
+                <?php foreach($ViceAlcaldes as $candidato):?>
+                <td><?=$candidato->id_candidato?></td>
+                  <td><?=$candidato->nombre.' '.$candidato->apellido?></td>
+                  <td><a href=""><?=$candidato->partido?></a></td>
+                  <td><?=$candidato->provincia?></td>
+                  <td><?=$candidato->Cantidad_votos?></td>
+                  <td>
+                        <a href="" class="btn btn-success">Ver Votaciones</a>
+                        <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
+                        <a href="<?=base_url('index.php/Candidato/edit?id_candidato=').$candidato->id_candidato?>" class="btn btn-warning btn-edit" data-toggle="modal" data-target="#modal-candidato"><span class="fas fa-pen"></span></a>
+                        <a href="<?=base_url('index.php/Candidato/delete?id_candidato=').$candidato->id_candidato?>" class="btn btn-danger"><span class="fas fa-cut"></span></a>
+                  </td>
                 </tr>
-                
-                <tr>
-                  <td>2</td>
-                  <td>Luis Abinader</td>
-                  <td><a href="">PRM</a></td>
-                  <td><a>Santo Domingo Norte</a></td>
-                  <td>275,000</td>
-                  <td><div class="progress progress-sm active">
-  <div class="progress-bar bg-success" role="progressbar"
-       aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 37%">
-    <span class="sr-only">20% Complete</span>
-  </div>
-</div></td>
-                </tr>
+                <?php endforeach;?>
                 </tbody>
-                <tfoot>
-                <tr>
-                <tr>
-                 <th>ID Candidato</th>
-                 <th>Candidato</th>
-                 <th>Partido</th>
-                 <th>Municipio</th>
-                 <th>Cantidad de votos</th>
-                 <th>Grafica</th>
-                </tr>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.card-body -->
