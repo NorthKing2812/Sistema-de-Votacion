@@ -206,30 +206,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview menu-close">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-person-booth"></i>
-              <p>
-              Usuarios
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-            
-            <li class="nav-item">
-                <a href="<?=base_url('index.php/Usuarios/add')?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url('index.php/Usuarios')?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listado</p>
-                </a>
-              </li>
-            </ul>
-          </li>
           
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -238,6 +214,50 @@
               Historias de Elecciones
               </p>
             </a>
+          </li>
+
+          <li class="nav-item">
+          <a href="<?=base_url('index.php/Usuarios')?>" class="nav-link">
+                  <i class="far fa-user"></i>
+                  <p>Usuarios</p>
+                </a>
+          </li>
+
+          <li class="nav-item">
+          <a href="<?=base_url('index.php/Graficas')?>" class="nav-link">
+                  <i class="far fa-user"></i>
+                  <p>Graficas</p>
+                </a>
+          </li>
+
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-person-booth"></i>
+              <p>
+                Reporte de Elecciones
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li>
+              <a href="<?=base_url('index.php/Reportes/report_presidencial')?>" class="nav-link">
+                  <i class="fas fa-search nav-icon"></i>
+                  <p>Reporte Presidenciales</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('index.php/Reportes/report_provincia')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Reportes Senadores y Diputados</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('index.php/eleccione/eleccionesVAlcalde')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Reportes de Alcadia</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>

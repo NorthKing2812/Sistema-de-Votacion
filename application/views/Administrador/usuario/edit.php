@@ -1,4 +1,4 @@
-<form action="<?php echo base_url();?>mantenimiento/usuarios/update" method="POST">
+<form action="<?php echo base_url();?>index.php/usuarios/update" method="POST">
                             <input type="hidden" value="<?php echo $usuario->id;?>" name="id_usuario">
                             <div class="row">
                     
@@ -8,7 +8,7 @@
                                 <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                       </div>
-                                <input type="text" class="form-control" value="<?php echo $usuario->username;?> id="username" name="username" disabled requerid>
+                                <input type="text" class="form-control" value="<?php echo $usuario->username;?>"id="username" name="username" disabled requerid>
                             </div>
                             </div>
                             <div class="form-group col-md-4">
@@ -24,11 +24,11 @@
                             <div class="row">
                             <div class="form-group col-md-5">
                                 <label for="nombres">Nombres:</label>
-                                <input type="text" class="form-control" id="nombres" name="nombres" requerid>
+                                <input type="text"  value="<?php echo $usuario->nombres;?>" class="form-control" id="nombres" name="nombres" requerid>
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="apellidos">Apellidos:</label>
-                                <input type="text" class="form-control" id="apellidos" name="apellidos" requerid>
+                                <input type="text" class="form-control"  value="<?php echo $usuario->apellidos;?>" id="apellidos" name="apellidos" requerid>
                             </div>
                             </div><!--/.row-->
                             
@@ -40,7 +40,7 @@
                                 <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-phone"></i></span>
                       </div>
-                                <input type="text" class="form-control" id="tel" name="telefono" requerid>
+                                <input type="text" value="<?php echo $usuario->telefono;?>" class="form-control" id="tel" name="telefono" requerid>
                             </div>
                             </div>
                             
@@ -50,7 +50,7 @@
                                 <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                       </div>
-                                <input type="email" class="form-control" id="email" name="email" requerid>
+                                <input type="email" value="<?php echo $usuario->email;?>" class="form-control" id="email" name="email" requerid>
                             </div>
                             </div>
 
