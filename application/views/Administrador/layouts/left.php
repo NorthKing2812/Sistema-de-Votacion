@@ -27,7 +27,7 @@
                with font-awesome or any other icon font library -->
           
                <li class="nav-item">
-            <a href="<?=base_url()?>" class="nav-link active">
+            <a href="<?=base_url('index.php/auth')?>" class="nav-link active">
               <i class="nav-icon fas fa-th"></i>
               <p>
                Inicio
@@ -135,7 +135,7 @@
             <ul class="nav nav-treeview">
 
             <li class="nav-item">
-                <a href="<?=base_url()?>" class="nav-link">
+                <a href="<?=base_url('index.php/auth')?>" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Resultados</p>
                 </a>
@@ -187,7 +187,7 @@
             </a>
             <ul class="nav nav-treeview">
 
-            <a href="<?=base_url('')?>" class="nav-link">
+            <a href="<?=base_url('index.php/auth')?>" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Resultados</p>
                 </a>

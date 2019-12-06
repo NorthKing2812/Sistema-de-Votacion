@@ -27,7 +27,7 @@ class Auth extends CI_Controller {
 
 		if (!$res) {
 			$this->session->set_flashdata("error","El usuario y/o contraseña son incorrectos");
-			redirect(base_url());
+			redirect(base_url('index.php/auth'));
 		}
 		else{
 			$data  = array(
@@ -37,12 +37,12 @@ class Auth extends CI_Controller {
 				'login' => TRUE
 			);
 			$this->session->set_userdata($data);
-			redirect(base_url());
+			redirect(base_url('index.php/auth'));
 		}
 	}
 
 	public function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url());
+		redirect(base_url('index.php/auth'));
 	}
 }

@@ -33,23 +33,38 @@ class Usuarios extends CI_Controller {
 		$apellido = $this->input->post("apellidos");
 		$email = $this->input->post("email");
 		$usuario = $this->input->post("username");
+		$password = $this->input->post("password");
+		$configPass =$this->input->post("configPassowrd");
 		$telefono = $this->input->post("telefono");
+		if(! $this->Usuarios_model->exits($usuario)){
+			if(!($password==$configPass)){
+				$data  = array(
+					'nombres' => $nombre,
+					'apellidos' => $apellido,
+					'email' => $email,
+					'username' => $usuario,
+					'password' => sha1($password),
+					'telefono' => $telefono,
+					'estado' => 1
+				);
+		
+				if ($this->Usuarios_model->save($data)) {
+					$this->session->set_flashdata("success","Se ha guardado la informacio");
+					redirect(base_url('index.php/usuarios'));
+				}
+				else{
+					$this->session->set_flashdata("error","Error:No se pudo guardar la informacion");
+					redirect(base_url("index.php/usuarios/add"));
+				}
+			}else{
+				
+			$this->session->set_flashdata("error","Error: Las contraseñas debe coincidir");
+			redirect(base_url("index.php/usuarios/add"));
 
-		$data  = array(
-			'nombres' => $nombre,
-			'apellidos' => $apellido,
-			'email' => $email,
-			'username' => $usuario,
-			'telefono' => $telefono,
-			'estado' => 1
-		);
-
-		if ($this->Usuarios_model->save($data)) {
-			redirect(base_url()."mantenimiento/usuarios");
-		}
-		else{
-			$this->session->set_flashdata("error","No se pudo guardar la informacion");
-			redirect(base_url()."mantenimiento/usuarios/add");
+			}
+		}else{
+			$this->session->set_flashdata("error","Error:El usuario ya existe");
+					redirect(base_url("index.php/usuarios/add"));
 		}
 	}
 
@@ -57,10 +72,8 @@ class Usuarios extends CI_Controller {
 		$data = array( 
 			"usuario" => $this->Usuarios_model->getUsuario($id),
 		);
-		$this->load->view("Administrador/layouts/encabezado");
-		$this->load->view("Administrador/layouts/left");
-		$this->load->view("admin/usuario/edit",$data);
-		$this->load->view("Administrador/layouts/footer");
+	
+		$this->load->view("Administrador/usuario/edit",$data);
 	}
 
 	public function update(){
@@ -79,19 +92,27 @@ class Usuarios extends CI_Controller {
 			'telefono' => $telefono
 		);
 		if ($this->Usuarios_model->update($id_usuario,$data)) {
-			redirect(base_url()."mantenimiento/usuarios");
+			
+			$this->session->set_flashdata("success","Cambios realizados exitosamente");
+			redirect(base_url("index.php/usuarios"));
 		}
 		else{
 			$this->session->set_flashdata("error","No se pudo guardar la informacion");
-			redirect(base_url()."mantenimiento/usuarios/edit/".$id_usuario);
+			redirect(base_url('index.php/usuarios'));
 		}
 	}
 	public function delete($id){
 		$data  = array(
 			'estado' => "0", 
 		);
-		$this->Usuarios_model->update($id,$data);
-		echo "mantenimiento/usuario";
+		if($this->Usuarios_model->update($id,$data)){
+			$this->session->set_flashdata("success","El registro se he eliminado");
+			redirect(base_url("index.php/usuarios"));
+		}
+		else{
+			$this->session->set_flashdata("error","No se pudo eliminar");
+			redirect(base_url('index.php/usuarios'));
+		}
 	}
 
 }

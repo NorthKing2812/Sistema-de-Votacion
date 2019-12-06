@@ -111,10 +111,12 @@ $.ajax({
   type:'GET',
   datatype:"html",
   success:function(response){
-    $('#modal-Partido .modal-body').html(response);
+    $('#modal-default .modal-body').html(response);
   }
+})
 });
-});
+
+
 let base_url="<?=base_url()?>";
 if($('#bar-chart').length>0){
         /*
@@ -176,6 +178,10 @@ $.ajax({
   });
 //
 });
+
+//inputmask-tel
+$('#tel').inputmask("(999) 999-9999");
+
 
 //Puestos cambios
 $("#puestos").change(function(){

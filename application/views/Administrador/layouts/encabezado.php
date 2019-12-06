@@ -70,14 +70,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <i class="fas fa-th-large"></i>
         
           </a>
-                            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <span class="dropdown-header">Opciones</span>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-            
-            </a>
-                              
-                            </ul>
+          <div class=" dropdown-item">
+            <a class=" btn btn-default btn-sm" href="<?php echo base_url('index.php/auth/logout'); ?>"> 
+            Cerrar Sesión
+            </a></div>
+            <div class="dropdown-divider"></div>
+                            </div>
+
                         </li>
       </li>
     </ul>

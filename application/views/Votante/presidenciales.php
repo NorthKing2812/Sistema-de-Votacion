@@ -59,25 +59,41 @@
     </ul>
 
     <!-- fieldsets -->
-
+<?php
+foreach ($rss as $ids) {
+    $id = $ids->id_votante;
+}
+?>
     <!-- Parte 1 -->
     <fieldset>
     
-      <div class="card-group">
+      <div class="card-deck">
       <!-- Cards -->
       <?php 
+       /*Ninguno*/
+       echo <<<HOLA
+       <div class="col-sm-4" style="padding: 6px">
+       <div class="card">
+       <a onclick = "funciona({$id}, 0, 1);" href = "#"> 
+       <img src="https://images.squarespace-cdn.com/content/v1/5aaecb177c9327b031576455/1569620728768-4RZ5KETJAQDLXPZDWEAB/ke17ZwdGBToddI8pDm48kLXCf88_9uNTKXkq27cF4sB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmzUsryC7riGV7bTeYhg5Sep4Y8p3OCJVqs3FfNTLch3O2M0DsfUdwheg190rC2-Re/user-icon-flat-style-isolated-on-white-background-vector-id1084418050.jpg"
+               class="card-img-top" alt="..."> </a>
+           <div class="card-body">
+               <h5 class="card-title fuente_cuerpo">No votar por nadie</h5>
+               <h5 class="card-title fuente_cuerpo">No deseo votar</h5>
+           </div>
+       </div>
+   </div>
+ HOLA;
             $rs = Usuarios::listados(1);
             foreach ($rs as $candidato) {
-                foreach ($rss as $ids) {
-                    $id = $ids->id_votante;
-                }
+                
                 $path_img=base_url('uploads/candidato/').$candidato->foto;
             echo <<<HOLA
             <div class="col-sm-4" style="padding: 6px">
             <div class="card">
             <a onclick = "funciona($id, $candidato->id_candidato, 1);" href = "#"> 
             <img src="{$path_img}"
-                    class="card-img-top w-50" alt="..."> </a>
+                    class="card-img-top" alt="..."> </a>
                 <div class="card-body">
                     <h5 class="card-title fuente_cuerpo">{$candidato->nombre} {$candidato->apellido}</h5>
                     <h5 class="card-title fuente_cuerpo">{$candidato->partido_nombre} {$candidato->siglas}</h5>
@@ -96,22 +112,38 @@
     </fieldset>
 
     <!-- Parte 2 -->
-
+    <?php
+foreach ($rss as $ids) {
+    $id = $ids->id_votante;
+}
+?>
     <fieldset>
-       <div class="card-group">
+       <div class="card-deck">
 
                   <!-- Cards -->
                   <?php 
+                   /*Ninguno*/
+                   echo <<<HOLA
+                   <div class="col-sm-4" style="padding: 6px">
+                   <div class="card">
+                   <a onclick = "funciona($id, 0, 2);" href = "#"> 
+                   <img src="https://images.squarespace-cdn.com/content/v1/5aaecb177c9327b031576455/1569620728768-4RZ5KETJAQDLXPZDWEAB/ke17ZwdGBToddI8pDm48kLXCf88_9uNTKXkq27cF4sB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmzUsryC7riGV7bTeYhg5Sep4Y8p3OCJVqs3FfNTLch3O2M0DsfUdwheg190rC2-Re/user-icon-flat-style-isolated-on-white-background-vector-id1084418050.jpg"
+                           class="card-img-top" alt="..."> </a>
+                       <div class="card-body">
+                           <h5 class="card-title fuente_cuerpo">No votar por nadie</h5>
+                           <h5 class="card-title fuente_cuerpo">No deseo votar</h5>
+                       </div>
+                   </div>
+               </div>
+             HOLA;
             $rs = Usuarios::listados(3);
             foreach ($rs as $candidato) {
-                foreach ($rss as $ids) {
-                    $id = $ids->id_votante;
-                }
+             
                 
                 $path_img=base_url('uploads/candidato/').$candidato->foto;
             echo <<<HOLA
             <div class="col-sm-4" style="padding: 6px">
-            <div class="card">
+            <div class="card h-100">
             <a onclick = "funciona($id, $candidato->id_candidato, 2);" href = "#"> 
             <img src="{$path_img}"
                     class="card-img-top w-50" alt="..."> </a>
@@ -132,26 +164,43 @@
       <button type="button" class="next action-button" id="siguiente2" hidden>Continue</button>  
     </fieldset>
 
-    <!-- Parte 3 -->  
+    <!-- Parte 3 --> 
+    <?php
+foreach ($rss as $ids) {
+    $id = $ids->id_votante;
+}
+?> 
     <fieldset>
-       <div class="card-group">
+       <div class="card-deck">
 
                   <!-- Cards -->
                   <?php 
+                    /*Ninguno*/
+                    echo <<<HOLA
+                    <div class="col-sm-4" style="padding: 6px">
+                    <div class="card h-100">
+                    <a onclick = "funciona($id, 0, 3);" href = "#"> 
+                    <img src="https://images.squarespace-cdn.com/content/v1/5aaecb177c9327b031576455/1569620728768-4RZ5KETJAQDLXPZDWEAB/ke17ZwdGBToddI8pDm48kLXCf88_9uNTKXkq27cF4sB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmzUsryC7riGV7bTeYhg5Sep4Y8p3OCJVqs3FfNTLch3O2M0DsfUdwheg190rC2-Re/user-icon-flat-style-isolated-on-white-background-vector-id1084418050.jpg"
+                            class="card-img-top" alt="..."> </a>
+                        <div class="card-body">
+                            <h5 class="card-title fuente_cuerpo">No votar por nadie</h5>
+                            <h5 class="card-title fuente_cuerpo">No deseo votar</h5>
+                        </div>
+                    </div>
+                </div>
+              HOLA;
+                    //Candidato
             $rs = Usuarios::listados(2);
-            print_r($rs);
             foreach ($rs as $candidato) {
-                foreach ($rss as $ids) {
-                    $id = $ids->id_votante;
-                }
+               
                 
                 $path_img=base_url('uploads/candidato/').$candidato->foto;
             echo <<<HOLA
             <div class="col-sm-4" style="padding: 6px">
-            <div class="card">
+            <div class="card h-100">
             <a onclick = "funciona($id, $candidato->id_candidato, 3);" href = "#"> 
             <img src="{$path_img}"
-                    class="card-img-top w-50" alt="..."> </a>
+                    class="card-img-top" alt="..."> </a>
                 <div class="card-body">
                     <h5 class="card-title fuente_cuerpo">{$candidato->nombre} {$candidato->apellido}</h5>
                     <h5 class="card-title fuente_cuerpo">{$candidato->partido_nombre} {$candidato->siglas}</h5>

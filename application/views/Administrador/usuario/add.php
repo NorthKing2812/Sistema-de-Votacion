@@ -32,44 +32,91 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-            <form action="<?php echo base_url();?>mantenimiento/usuarios/store" method="POST">
-                            <div class="row">
-                            <div class="form-group">
-                                <label for="nombres">Nombres:</label>
-                                <input type="text" class="form-control" id="nombres" name="nombres">
+            <form action="<?php echo base_url();?>index.php/usuarios/store" method="POST">
+            <div class="row">
+                    
+                    <div class="form-group col-md-4">
+                                <label for="username">Usuario:</label>
+                                <div class="input-group">
+                                <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      </div>
+                                <input type="text" class="form-control" id="username" name="username" requerid>
                             </div>
-                            <div class="form-group">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="tipo_user">Tipo Usuario:</label>
+                                <select name="tipoUser" class="form-control" id="" disabled>
+                                <option value="1" selected>Administrador</option>
+                                </select>
+                            </div>
+                    </div>
+
+                    <div class="row">
+                    
+                    
+                    <div class="form-group col-md-4">
+                                <label for="username">Constraseña:</label>
+                                <div class="input-group">
+                                <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      </div>
+                                <input type="password" class="form-control" id="passowrd" name="password" requerid>
+                            </div>
+                            </div>
+
+                            
+                    <div class="form-group col-md-4">
+                                <label for="username">Confirmar Constraseña:</label>
+                                <div class="input-group">
+                                <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      </div>
+                                <input type="password" class="form-control" id="configPassowrd" name="configPassword" requerid>
+                            </div>
+                            </div>
+                    </div>
+
+
+                            <div class="row">
+                            <div class="form-group col-md-5">
+                                <label for="nombres">Nombres:</label>
+                                <input type="text" class="form-control" id="nombres" name="nombres" requerid>
+                            </div>
+                            <div class="form-group col-md-5">
                                 <label for="apellidos">Apellidos:</label>
-                                <input type="text" class="form-control" id="apellidos" name="apellidos">
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" requerid>
                             </div>
                             </div><!--/.row-->
                             
                             
                             <div class="row">
-                            <div class="form-group">
+                            <div class="form-group col-md-5">
                                 <label for="telefono">Telefono:</label>
-                                <input type="text" class="form-control" id="telefono" name="telefono">
+                                <div class="input-group">
+                                <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                      </div>
+                                <input type="text" class="form-control" id="tel" name="telefono" requerid>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="text" class="form-control" id="email" name="email">
                             </div>
                             
-
+                            <div class="form-group col-md-5">
+                            <label for="email">Email:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                      </div>
+                                <input type="email" class="form-control" id="email" name="email" requerid>
+                            </div>
                             </div>
 
-                            <div class="form-group col-md-4">
-                                <label for="username">Usuario:</label>
-                                <input type="text" class="form-control" id="username" name="username">
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="tipo_user">Tipo Usuario:</label>
-                                <input type="text" class="form-control" id="tipo_user" name="tipo_user">
-                            </div>
+                    
                             
 
                         <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-flat">Guardar</button>
+                                <button type="submit" class="btn btn-success">Guardar</button>
                             </div>
                         </form>
                     <!--/.Form-->
@@ -85,4 +132,3 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-

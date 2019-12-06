@@ -35,4 +35,15 @@ class Usuarios_model extends CI_Model {
 		$this->db->where("id",$id);
 		return $this->db->update("usuarios",$data);
 	}
+	public function exits($username){
+		$this->db->where('username', $username);
+		$this->db->where('estado', 1);	
+		$resultado=$this->db->get('usuarios');
+	if($resultado->num_rows()>0){
+		return true;
+	}else{
+		return false;
+	}
+
+	}	
 }
