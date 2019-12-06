@@ -53,11 +53,12 @@
                   <td><?=$partido->siglas?></td>
                   <td> <i class="fas fa-square" style="color:<?=$partido->HexaColor1?>;"></i>  <i class="fas fa-square" style="color:<?=$partido->HexaColor2?>;"></i></td>
                   <td><?=$partido->Presidente?></td>
-                  <td>45</td>
-                  <td><a href="<?=$partido->logo?>">Ver logo</a> </td>
+                  <td>0</td>
                   <td>
-                        <a href="" class="btn btn-primary"><span class="fas fa-eye"></span></a>
-                        <a href="<?=base_url('index.php/partido/edit?id_partido=').$partido->id_partido?>" class="btn btn-warning .btn-edit"><span class="fas fa-pen"></span></a>
+                  <a href="<?=base_url('index.php/partido/view?id_partido=').$partido->id_partido?>" class="btn btn-primary btn-view" data-toggle="modal" data-target="#modal-sm"><span class="fas fa-eye"></span></a>   
+                  </td>
+                  <td>
+                        <a href="<?=base_url('index.php/partido/edit?id_partido=').$partido->id_partido?>" class="btn btn-warning btn-edit"><span class="fas fa-pen" data-toggle="modal" data-target="#modal-default"></span></a>
                         <a href="<?=base_url('index.php/partido/delete?id_partido=').$partido->id_partido?>" class="btn btn-danger"><span class="fas fa-cut"></span></a>
                   </td>
                 </tr>
@@ -79,7 +80,7 @@
 </div>
 
 
-<div class="modal fade" id="modal-Partido">
+<div class="modal fade" id="modal-default">
         <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -94,6 +95,18 @@
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="modal-sm">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-body">
+             </div>
           </div>
           <!-- /.modal-content -->
         </div>

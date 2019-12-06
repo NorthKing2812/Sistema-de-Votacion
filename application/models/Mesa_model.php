@@ -38,11 +38,16 @@ class Mesa_model extends CI_Model {
         
         //Cantidad de mesas
 public function countMesa(){
-  $this->db->select('count(*)');
+  $this->db->select("count(*)  as 'cantidad'");
     $resultado=$this->db->get('mesa');
     return $resultado->row();
-}//cantidad de mesas computada
-
+}//cantidad de mesas computadas
+public function countMesaComputadas(){
+  $this->db->select("count(*) as 'cantidad'");
+    $resultado=$this->db->get('mesa');
+    $this->db->where('Computada', 1);
+    return $resultado->row();
+}
         //obtener votos de una mesa
         public function getvotos($codigoMesa){
             $this->db->select("id_voto,vt.cedula,ct.nombre AS 'cNombre',apellido as 'cApellido', puesto,vv.id_mesa");

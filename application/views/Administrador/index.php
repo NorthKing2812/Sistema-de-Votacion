@@ -62,7 +62,7 @@ width:800px;
 <!--Row-->
 <div class="row">
 <!-- Left col -->
-<div class="col-md-7">
+<div class="col-md-12">
             <!-- MAP & BOX PANE -->
             <div class="card">
               <div class="card-header">
@@ -88,18 +88,18 @@ width:800px;
                   </div>
                   <div class="card-pane-right bg-success pt-2 pb-2 pl-4 pr-4">
                     <div class="description-block mb-4">
-                      <h5 class="description-header">8390</h5>
+                      <h5 class="description-header"><?=$Mesa->cantidad?></h5>
                       <span class="description-text">Total de mesas</span>
                     </div>
                     <!-- /.description-block -->
                     <div class="description-block mb-4">
-                      <div class="sparkbar pad" data-color="#fff">545</div>
-                      <h5 class="description-header">30%</h5>
+                      <div class="sparkbar pad" data-color="#fff"><?=$MesaComputada->cantidad?></div>
+                      <h5 class="description-header"><?php echo (intval($MesaComputada->cantidad)/intval($Mesa->cantidad))*100;?>%</h5>
                       <span class="description-text">Mesas computadas</span>
                     </div>
                     <!-- /.description-block -->
                     <div class="description-block">
-                      <h5 class="description-header">523,456</h5>
+                      <h5 class="description-header"><?=$cantidadVotos->cantidad?></h5>
                       <span class="description-text">Total de votos</span>
                     </div>
                     <!-- /.description-block -->
@@ -111,64 +111,6 @@ width:800px;
             <!-- /.card -->
 
 </div>
-<!--Row-->
-<div class="row">
-<div class="col-md-12">
-<div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Mesa Recientemente Computada</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th style="width: 10px">No Mesa</th>
-                      <th style="width: 10px">Votos</th>
-                      <th style="width: 55px">Ubicacion</th>
-                      <th style="width: 40px">Colegio Electoral</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>12 55 B.</td>
-                      <td>15000</td>
-                      <td>
-                     Santo domingo Este    
-                    </div>
-                      </td>
-                      <td>Liceo Mateo Lara</td>
-                    </tr>
-                    <tr>
-                      <td>12 55 B.</td>
-                      <td>15000</td>
-                      <td>
-                     Santo domingo Este    
-                    </div>
-                      </td>
-                      <td>Liceo Mateo Lara</td>
-                    </tr>
-                    
-                    <tr>
-                      <td>12 55 B.</td>
-                      <td>15000</td>
-                      <td>
-                     Santo domingo Este    
-                    </div>
-                      </td>
-                      <td>Liceo Mateo Lara</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-</div>
-<!--/.Row-->
            </div>
       </div><!-- /.container-fluid -->
     </div>

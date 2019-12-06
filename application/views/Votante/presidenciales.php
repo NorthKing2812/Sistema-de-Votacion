@@ -28,6 +28,9 @@
 
 </head>
 <body>
+<style>
+
+</style>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #070d59">
   <div class="container">

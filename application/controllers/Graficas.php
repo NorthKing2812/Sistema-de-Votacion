@@ -29,7 +29,8 @@ class Graficas extends CI_Controller {
 		$query = "SELECT COUNT(vtv.id_voto) AS res, CONCAT(cdt.nombre,' ',cdt.apellido) AS names  FROM votante_voto AS vtv 
                 INNER JOIN candidato AS cdt ON vtv.id_candidato = cdt.id_candidato
                 WHERE cdt.puesto = 3 AND cdt.id_provincia = $provincia
-                GROUP BY cdt.id_candidato";
+				GROUP BY cdt.id_candidato
+				ORDER BY res desc";
         $senador = $this->db_connection->query($query);
         $i = 0;
 		$result = $senador;
@@ -54,7 +55,8 @@ class Graficas extends CI_Controller {
 		$query = "SELECT COUNT(vtv.id_voto) AS res, CONCAT(cdt.nombre,' ',cdt.apellido) AS names  FROM votante_voto AS vtv 
                 INNER JOIN candidato AS cdt ON vtv.id_candidato = cdt.id_candidato
                 WHERE cdt.puesto = 2 AND cdt.id_provincia = $provincia
-                GROUP BY cdt.id_candidato";
+				GROUP BY cdt.id_candidato
+				ORDER BY res desc";
         $senador = $this->db_connection->query($query);
         $i = 0;
 		$result = $senador;
@@ -79,7 +81,8 @@ class Graficas extends CI_Controller {
 		$query = "SELECT COUNT(vtv.id_voto) AS res, CONCAT(cdt.nombre,' ',cdt.apellido) AS names  FROM votante_voto AS vtv 
                 INNER JOIN candidato AS cdt ON vtv.id_candidato = cdt.id_candidato
                 WHERE cdt.puesto = 4 AND cdt.id_municipio = $municipio
-                GROUP BY cdt.id_candidato";
+				GROUP BY cdt.id_candidato
+				ORDER BY res desc";
         $senador = $this->db_connection->query($query);
         $i = 0;
 		$result = $senador;
@@ -104,7 +107,8 @@ class Graficas extends CI_Controller {
 		$query = "SELECT COUNT(vtv.id_voto) AS res, CONCAT(cdt.nombre,' ',cdt.apellido) AS names  FROM votante_voto AS vtv 
                 INNER JOIN candidato AS cdt ON vtv.id_candidato = cdt.id_candidato
                 WHERE cdt.puesto = 5 AND cdt.id_municipio = $municipio
-                GROUP BY cdt.id_candidato";
+				GROUP BY cdt.id_candidato
+				ORDER BY res desc";
         $senador = $this->db_connection->query($query);
         $i = 0;
 		$result = $senador;

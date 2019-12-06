@@ -33,7 +33,7 @@ class partido extends CI_Controller {
 	
     }
     public function add(){
- $config['upload_path'] = './uploads/partidos';
+        $config['upload_path'] = './uploads/partidos';
          $config['allowed_types'] = 'gif|jpg|png';
          $config['max_size'] = '2048';
          
@@ -68,53 +68,60 @@ class partido extends CI_Controller {
     }
     public function update(){
 
-        
-        $config['upload_path'] = './uploads/partidos';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = '2048';
-        
-        $this->load->library('upload', $config);
-        
-        if ( ! $this->upload->do_upload('imagePartido')){
-            $error = array('error' => $this->upload->display_errors());
-             $Errormsg= strip_tags($error['error']);
-             $this->session->set_flashdata("error","{$Errormsg}");
-                redirect(base_url('index.php/partido/form'));
-        }
-        else{
-            $file_info=  $this->upload->data();
+        $id_partido= $this->input->post('id_partido');
+                
+        //Validar si el archivo existe
+        if(file_exists($_FILES['imagePartido']['tmp_name'])){
+            $config['upload_path'] = './uploads/partidos';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = '2048';
             
-
+            $this->load->library('upload', $config);
+            
+            if ( ! $this->upload->do_upload('imagePartido')){//Guardar en la capeta
+                $error = array('error' => $this->upload->display_errors());
+                 $Errormsg= strip_tags($error['error']);
+                 $this->session->set_flashdata("error","{$Errormsg}");
+                    redirect(base_url('index.php/partido/form'));
+            }
+            else{
+                $file_info=  $this->upload->data();
+                
+                $partido= $this->Partido_model->getPartido($id_partido);
+                
+                if(unlink('uploads/partidos/'.$partido->logo)){//Si se logra eliminar el anterior
+                    
+                    $datos=array(
+                        'nombre'=>$this->input->post('nombre'), 
+                        'siglas'=>$this->input->post('sigla'), 
+                        'Presidente'=>$this->input->post('presidente'),  
+                        'logo'=>$file_info['file_name'], 
+                        'HexaColor1'=>$this->input->post('hexacolor1'), 
+                        'HexaColor2'=>$this->input->post('hexacolor2'), 
+                    );
+                
+            }else{
+                $this->session->set_flashdata("error","Error al actualizar el logo");
+                    redirect(base_url('index.php/partido'));
+            }
+    
+            }
+        }else{
             $datos=array(
                 'nombre'=>$this->input->post('nombre'), 
                 'siglas'=>$this->input->post('sigla'), 
-                'Presidente'=>$this->input->post('presidente'),  
-                'logo'=>$file_info['file_name'], 
+                'Presidente'=>$this->input->post('presidente'),   
                 'HexaColor1'=>$this->input->post('hexacolor1'), 
                 'HexaColor2'=>$this->input->post('hexacolor2'), 
             );
-            $id_partido= $this->input->post('id_partido');
-            
-            $partido= $this->Partido_model->getPartido($id_partido);
-            
-            if(unlink('uploads/partidos/'.$partido->logo)){
-
-            if($this->Partido_model->actualizarPartido($id_partido,$datos)){
-                $this->session->set_flashdata("success","Exito al actualizar Registro");
-                redirect(base_url('index.php/partido'));
-            }else{
-                $this->session->set_flashdata("error","Error al actualizar Registro");
-                redirect(base_url('index.php/partido'));
-            }
+        }
+        if($this->Partido_model->actualizarPartido($id_partido,$datos)){//actializar
+            $this->session->set_flashdata("success","Exito al actualizar Registro");
+            redirect(base_url('index.php/partido'));
         }else{
-            $this->session->set_flashdata("error","Error al actualizar el logo");
-                redirect(base_url('index.php/partido'));
+            $this->session->set_flashdata("error","Error al actualizar Registro");
+            redirect(base_url('index.php/partido'));
         }
-
-
-
-        }
-        
 
     }
     public function delete(){
@@ -134,6 +141,14 @@ public function edit(){
             'Partido'=>$this->Partido_model->getPartido($id_partido)
     );
     $this->load->view('Administrador/Entidades/partido/view_edit',$datos);
+}
+public function view(){
+    
+    $id_partido=$this->input->get('id_partido');
+    $datos = array(
+            'Partido'=>$this->Partido_model->getPartido($id_partido)
+    );
+    $this->load->view('Administrador/Entidades/partido/view_detalle',$datos);
 }
 /*End of modals adicionales */
 }

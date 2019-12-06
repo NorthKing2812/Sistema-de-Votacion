@@ -4,7 +4,8 @@
 	$query = "SELECT COUNT(vtv.id_voto) AS res, cdt.nombre,cdt.apellido FROM votante_voto AS vtv 
                 INNER JOIN candidato AS cdt ON vtv.id_candidato = cdt.id_candidato
                 WHERE cdt.puesto = 1
-                GROUP BY cdt.id_candidato";
+                GROUP BY cdt.id_candidato
+                ORDER BY res desc";
     $presidente = $con->query($query);
     
     

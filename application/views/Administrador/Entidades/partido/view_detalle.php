@@ -1,0 +1,1 @@
+<img src="<?=base_url('uploads/partidos/').$Partido->logo?>" class="card-img" alt="...">

@@ -12,7 +12,7 @@ static function guardar($cedula){
 
 static function listados($puesto){
     $CI =& get_instance();
-    $sql = "SELECT partido.nombre as partido_nombre, partido.siglas, candidato.nombre, 
+    $sql = "SELECT partido.nombre as partido_nombre, partido.siglas,partido.hexaColor1,partido.hexaColor2, candidato.nombre, 
     candidato.id_candidato as id_candidato,
     candidato.apellido, candidato.puesto, candidato.foto FROM candidato INNER JOIN partido
     ON candidato.id_partido = partido.id_partido WHERE candidato.puesto = {$puesto}";

@@ -116,6 +116,19 @@ $.ajax({
 })
 });
 
+$('.btn-view').on('click',function(event){
+  event.preventDefault();
+let href = $(this).attr('href');
+$.ajax({
+  url:href,
+  type:'GET',
+  datatype:"html",
+  success:function(response){
+    $('#modal-sm .modal-body').html(response);
+  }
+})
+})
+
 
 let base_url="<?=base_url()?>";
 if($('#bar-chart').length>0){

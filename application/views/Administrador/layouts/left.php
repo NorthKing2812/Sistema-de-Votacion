@@ -35,6 +35,12 @@
             </a>
           </li>
           
+          <li class="nav-item">
+          <a href="<?=base_url('index.php/Graficas')?>" class="nav-link">
+                  <i class="fas fa-chart-bar"></i>
+                  <p>Graficas</p>
+                </a>
+          </li>
           <li class="nav-item has-treeview menu-close">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-landmark"></i>
@@ -135,7 +141,7 @@
             <ul class="nav nav-treeview">
 
             <li class="nav-item">
-                <a href="<?=base_url('index.php/auth')?>" class="nav-link">
+                <a href="<?=base_url('index.php/Graficas')?>" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Resultados</p>
                 </a>
@@ -187,7 +193,7 @@
             </a>
             <ul class="nav nav-treeview">
 
-            <a href="<?=base_url('index.php/auth')?>" class="nav-link">
+            <a href="<?=base_url('index.php/Graficas')?>" class="nav-link">
                   <i class="fas fa-search nav-icon"></i>
                   <p>Resultados</p>
                 </a>
@@ -217,22 +223,35 @@
           </li>
 
           <li class="nav-item">
-          <a href="<?=base_url('index.php/Usuarios')?>" class="nav-link">
-                  <i class="far fa-user"></i>
-                  <p>Usuarios</p>
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Usuarios
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            
+            <li class="nav-item">
+                <a href="<?=base_url('index.php/Usuarios/add')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar</p>
                 </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('index.php/Usuarios')?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
-          <li class="nav-item">
-          <a href="<?=base_url('index.php/Graficas')?>" class="nav-link">
-                  <i class="far fa-user"></i>
-                  <p>Graficas</p>
-                </a>
-          </li>
 
           <li class="nav-item has-treeview menu-close">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-person-booth"></i>
+              <i class="nav-icon fas fas fa-file"></i>
               <p>
                 Reporte de Elecciones
                 <i class="right fas fa-angle-left"></i>
@@ -241,7 +260,7 @@
             <ul class="nav nav-treeview">
               <li>
               <a href="<?=base_url('index.php/Reportes/report_presidencial')?>" class="nav-link">
-                  <i class="fas fa-search nav-icon"></i>
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Reporte Presidenciales</p>
                 </a>
               </li>
